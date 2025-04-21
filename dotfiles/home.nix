@@ -36,10 +36,6 @@
     enableZshIntegration = true;
   };
 
-  # Add docker
-  virtualisation.docker.enable = true;
-  users.users.sven.extraGroups = [ "docker" ];
-
   # State version for compatibility and migration tracking
   home.stateVersion = "24.11";
 }
