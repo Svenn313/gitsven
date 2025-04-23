@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+ { pkgs, lib, config, ... }:
 
 {
   programs.zsh = {
@@ -6,7 +6,7 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "powerlevel10k/powerlevel10k";
+      theme = "bira";
       plugins = [
         "git"
         "aliases"
@@ -50,5 +50,13 @@
         };
       }
     ];
+
+    shellAliases = {
+      # Ajoutez vos alias ici
+      nixdir = "$HOME/Git/gitsven/dotfiles/";
+      nix-update = "sudo nixos-rebuild switch";
+      home-update = "home-manager switch";
+      cat = "bat -pp";
+    };
   };
 }

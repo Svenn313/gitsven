@@ -1,0 +1,44 @@
+window {
+  margin: 0px;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #a66de8 0%, #331952 100%) 1;
+  background-color: #282828;
+  font-family: "Hack";
+  font-weight: Regular;
+  font-size: 16px;
+}
+
+#input {
+  margin: 5px;
+  border: none;
+  color: #ebdbb2;
+  background-color: #1d2021;
+}
+
+#inner-box {
+  margin: 5px;
+  border: none;
+  background-color: #282828;
+}
+
+#outer-box {
+  margin: 5px;
+  border: none;
+  background-color: #282828;
+}
+
+#scroll {
+  margin: 0px;
+  border: none;
+}
+
+#text {
+  margin: 5px;
+  border: none;
+  color: #ebdbb2;
+}
+
+#entry:selected {
+  background-color: #d65d0e;
+  color: #ffffff;
+}
