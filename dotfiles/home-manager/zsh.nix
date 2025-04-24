@@ -53,7 +53,7 @@
 
     shellAliases = {
       # Ajoutez vos alias ici
-      nixdir = "$HOME/Git/gitsven/dotfiles/";
+      nixdir = "$HOME/git/gitsven/dotfiles/";
       nix-update = "sudo nixos-rebuild switch";
       home-update = "home-manager switch";
       cat = "bat -pp";
