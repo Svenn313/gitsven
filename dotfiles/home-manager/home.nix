@@ -32,6 +32,8 @@
     gtk-engine-murrine
     gnome-themes-extra
     orchis-theme
+    nix-prefetch-git
+    devenv
   ];
 
   # Enable GPG
@@ -40,7 +42,7 @@
     enable = true;
     enableSshSupport = true;
     enableExtraSocket = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentryPackage = pkgs.pinentry-tty;
   };
 
   # Set wallpaper using gsettings via dconf

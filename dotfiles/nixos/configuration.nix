@@ -8,14 +8,20 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./nvidia.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
-  networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -26,22 +32,6 @@
   hardware.graphics = {
   enable = true;
   enable32Bit = true;
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    modesetting.enable = true; # Mandatory
-    powerManagement.enable = false;
-    powerManagement.finegrained = false; # Turns off GPU when not in use
-    open = false; # open source kernel module
-    nvidiaSettings = true; # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    prime = {
-      sync.enable = true;
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
   };
 
   # Enable fonts
@@ -82,12 +72,8 @@
     };
   };
 
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.enable = true; # Enable the X11 windowing system
+  services.xserver.displayManager.gdm.enable = true; # Enable GNOME
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -126,11 +112,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	vim
-	wget
-	curl
-	home-manager
-	git
+    vim
+    wget
+    curl
+    home-manager
+    git
   ];
 
   # Allow unfree packages

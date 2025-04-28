@@ -52,11 +52,10 @@
     ];
 
     shellAliases = {
-      # Ajoutez vos alias ici
       nixdir = "$HOME/git/gitsven/dotfiles/";
-      nix-update = "sudo nixos-rebuild switch";
-      home-update = "home-manager switch";
       cat = "bat -pp";
+      newpy = "devenv init && cp \\
+      $HOME/git/gitsven/dotfiles/home-manager/devenvTemplates/python-devenv.nix devenv.nix";
     };
   };
 }
