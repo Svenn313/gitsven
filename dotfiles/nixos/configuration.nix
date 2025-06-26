@@ -14,7 +14,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+ 
   networking = {
     hostName = "nixos";
     networkmanager = {
@@ -34,9 +34,16 @@
   enable32Bit = true;
   };
 
+  # Garbage Collector
+  nix.gc = {
+  automatic = true;
+  dates = "weekly";
+  options = "--delete-older-than 7d";
+  };
+
   # Enable fonts
   fonts.packages = with pkgs; [ nerdfonts ];
-  
+
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -122,5 +129,5 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11";
 }

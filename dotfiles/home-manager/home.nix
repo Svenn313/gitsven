@@ -10,6 +10,7 @@
     ./nvim.nix
     ./git.nix
     ./zsh.nix
+    ./devops.nix
   ];
 
   # List of packages to install for the user
