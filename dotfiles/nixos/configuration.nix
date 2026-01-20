@@ -14,7 +14,15 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
- 
+
+  # Kernel options to activate the Nvidia GPU
+  boot.kernelParams = [
+    "acpi_rev_override=1"
+    "pci=realloc"
+    "pci=assign-busses"
+    "pcie_aspm=off"
+  ];
+
   networking = {
     hostName = "nixos";
     networkmanager = {
@@ -124,6 +132,7 @@
     curl
     home-manager
     git
+    wakeonlan
   ];
 
   # Allow unfree packages

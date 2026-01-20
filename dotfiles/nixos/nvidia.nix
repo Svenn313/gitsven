@@ -9,7 +9,7 @@
     powerManagement.finegrained = false; # Turns off GPU when not in use
     open = false; # open source kernel module
     nvidiaSettings = true; # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
     prime = {
       sync.enable = true;
       intelBusId = "PCI:0:2:0";

@@ -11,6 +11,7 @@
     ./git.nix
     ./zsh.nix
     ./devops.nix
+    ./kitty.nix
   ];
 
   # List of packages to install for the user
@@ -25,6 +26,8 @@
     bat
     networkmanagerapplet
     telegram-desktop
+    element-desktop
+    signal-desktop
     discord
     protonvpn-gui
     proton-pass
@@ -34,7 +37,7 @@
     gnome-themes-extra
     orchis-theme
     nix-prefetch-git
-    devenv
+    # devenv
   ];
 
   # Enable GPG
