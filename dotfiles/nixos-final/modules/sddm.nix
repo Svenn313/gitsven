@@ -10,6 +10,9 @@
       wayland.enable = true;
       theme          = "sddm-astronaut-theme";
       settings.General.InputMethod = "";
+      extraPackages = [
+      pkgs.kdePackages.qtmultimedia
+      ];
     };
 
     services.xserver.xkb = {
