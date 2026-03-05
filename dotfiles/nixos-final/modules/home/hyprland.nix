@@ -125,10 +125,10 @@
 
     bind = , xf86monbrightnessup,   exec, brightnessctl set 5%+
     bind = , xf86monbrightnessdown, exec, brightnessctl set 5%-
-
-    bind = , print,     exec, grim ~/Pictures/$(date ''+%Y-%m-%d-%H:%M:%S'').png
-    bind = $mainMod, S, exec, grim ~/Pictures/$(date ''+%Y-%m-%d-%H:%M:%S'').png
-
+    
+    bind = , print,     exec, grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
+    bind = $mainMod, S, exec, grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
+    
     bind = $mainMod, left,  movefocus, l
     bind = $mainMod, right, movefocus, r
     bind = $mainMod, up,    movefocus, u
