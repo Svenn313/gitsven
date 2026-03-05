@@ -14,13 +14,7 @@
       xwayland.enable = true;
     };
 
-    services.displayManager.sddm = {
-      enable         = true;
-      wayland.enable = true;
-      settings.General.InputMethod = "";
-    };
-
-    services.xserver.xkb = {
+   services.xserver.xkb = {
       layout  = "fr";
       variant = "azerty";
     };
@@ -37,20 +31,7 @@
       python3
       kdePackages.dolphin
       grim
-      (pkgs.stdenv.mkDerivation {
-        name = "sddm-noctalia-theme";
-        src = pkgs.fetchFromGitHub {
-          owner  = "mahaveergurjar";
-          repo   = "sddm";
-          rev    = "noctalia";
-          sha256 = pkgs.lib.fakeHash;
-        };
-        installPhase = ''
-          mkdir -p $out/share/sddm/themes/noctalia
-          cp -r . $out/share/sddm/themes/noctalia
-        '';
-      })
-    ];
+      ];
 
 services.displayManager.sddm.theme = "noctalia";
     services.power-profiles-daemon.enable = true;
