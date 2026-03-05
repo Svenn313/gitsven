@@ -3,7 +3,7 @@
 {
   programs.zsh = {
     oh-my-zsh = {
-      theme   = "powerlevel10k/powerlevel10k";
+      theme   = ""; # Powerlevel10k, see below
       plugins = [
         "git"
         "aliases"
@@ -44,6 +44,7 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
       export PATH="$HOME/.local/bin:$PATH"
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
     '';
   };
 
