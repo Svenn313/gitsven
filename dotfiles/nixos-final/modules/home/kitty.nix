@@ -12,12 +12,7 @@
       italic_font      = "MesloLGS NF Italic";
       bold_italic_font = "MesloLGS NF Bold Italic";
 
-      font_features = [
-        "FiraCode-Regular +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31"
-        "FiraCode-Retina +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31"
-      ];
-
-      # Cursor
+     # Cursor
       shell_integration      = "no-cursor";
       cursor_shape           = "block";
       cursor_blink_interval  = 0;
