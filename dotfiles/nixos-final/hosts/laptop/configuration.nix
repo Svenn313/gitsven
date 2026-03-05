@@ -12,7 +12,7 @@
     ../../modules/networking.nix
     ../../modules/fonts.nix
     ../../modules/locale.nix
-    ../../modules/sddm.nix
+    ../../modules/greeter.nix
   ];
 
   # =========================================
@@ -28,7 +28,7 @@
     networking.enable = true;
     fonts.enable      = true;
     locale.enable     = true;
-    sddm.enable       = true;
+    greeter.enable       = true;
   };
 
   # =========================================
