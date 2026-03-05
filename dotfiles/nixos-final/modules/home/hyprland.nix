@@ -118,7 +118,6 @@
     bind  = $mainMod, P, exec, $ipc sessionMenu toggle
     bind  = $mainMod, O, exec, $ipc controlCenter toggle
     bind  = $mainMod, V, togglefloating,
-    bind  = $mainMod, W, exec, pkill -SIGUSR1 ''^waybar$''
 
     bind  = , XF86AudioMute,        exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
     binde = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
