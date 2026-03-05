@@ -45,6 +45,27 @@
 
       export PATH="$HOME/.local/bin:$PATH"
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        
+      function rebuild() {
+        echo "sudo nixos-rebuild switch --flake /etc/nixos"
+        sudo nixos-rebuild switch --flake /etc/nixos
+      }
+  
+      function update() {
+        echo "nix flake update /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos"
+        nix flake update /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos
+      }
+  
+      function gc() {
+        echo "sudo nix-collect-garbage -d"
+        sudo nix-collect-garbage -d
+      }
+
+      function nixdir() {
+        echo "cd /etc/nixos"
+        cd /etc/nixos
+      }
+        
     '';
   };
 
