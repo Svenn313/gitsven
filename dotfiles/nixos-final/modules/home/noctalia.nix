@@ -6,7 +6,7 @@
       location.name = "Paris, France";
 
       colorSchemes = {
-        predefinedScheme = "Noctalia (default)";
+        predefinedScheme = "Catppuccin";
         darkMode = true;
       };
 
