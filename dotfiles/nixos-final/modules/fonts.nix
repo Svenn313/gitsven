@@ -8,6 +8,7 @@
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       noto-fonts-color-emoji
+      nerd-fonts.meslo-lg
     ];
   };
 }

@@ -5,6 +5,10 @@
     extraConfig = ''
       font_family Fira Code Regular
       bold_font Fira Code Retina
+      font_family MesloLGS NF Regular
+      bold_font MesloLGS NF Bold
+      italic_font MesloLGS NF Italic
+      bold_italic_font MesloLGS NF Bold Italic
       font_features FiraCode-Regular +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31
       font_features FiraCode-Retina +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31
       font_size 15.0
