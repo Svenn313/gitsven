@@ -26,6 +26,7 @@ programs.fzf.enable            = true;
 programs.noctalia-shell.enable = true;
 
 services.gpg-agent.enable      = true;
+wayland.windowManager.hyprland.enable = true;
 
 # =========================================
 
