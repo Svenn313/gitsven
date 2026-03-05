@@ -10,7 +10,7 @@
       xwayland.enable = true;
     };
 
-    services.sddm = {
+    services.displayManager.sddm = {
       enable         = true;
       wayland.enable = true;
     };
