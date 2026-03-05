@@ -1,198 +1,171 @@
 { config, pkgs, ... }:
 
 {
-  home.file.".config/hypr/hyprland.conf".text = ''
-    ################
-    ### MONITORS ###
-    ################
+  wayland.windowManager.hyprland = {
+    enable = true;
 
-    monitor=,preferred,auto,1
+    settings = {
+      monitor = ",preferred,auto,1";
 
-    ################
-    ### AUTOEXEC ###
-    ################
+      exec-once = [
+        "noctalia-shell"
+        "blueman-applet"
+      ];
 
-    exec-once = noctalia-shell
-    exec-once = blueman-applet
+      "$terminal"    = "kitty";
+      "$fileManager" = "dolphin";
+      "$menu"        = "hyprlauncher";
+      "$mainMod"     = "SUPER";
+      "$ipc"         = "noctalia-shell ipc call";
 
-    ###################
-    ### MY PROGRAMS ###
-    ###################
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
 
-    $terminal    = kitty
-    $fileManager = dolphin
-    $menu        = hyprlauncher
+      general = {
+        gaps_in     = 3;
+        gaps_out    = 7;
+        border_size = 2;
+        "col.active_border"   = "rgb(9a00d5)";
+        "col.inactive_border" = "rgb(11111b)";
+      };
 
-    #############################
-    ### ENVIRONMENT VARIABLES ###
-    #############################
+      decoration = {
+        rounding       = 5;
+        rounding_power = 2;
+        shadow = {
+          enabled      = true;
+          range        = 4;
+          render_power = 3;
+          color        = "rgba(1a1a1aee)";
+        };
+        blur = {
+          enabled  = true;
+          size     = 3;
+          passes   = 3;
+          vibrancy = 0.1696;
+        };
+      };
 
-    env = XCURSOR_SIZE,24
-    env = HYPRCURSOR_SIZE,24
+      animations = {
+        enabled = true;
+        bezier = "myBezier, 0.16, 1, 0.3, 1";
+        animation = [
+          "windows,    1, 5,  myBezier"
+          "windowsOut, 1, 5,  myBezier, popin 80%"
+          "border,     1, 10, myBezier"
+          "fade,       1, 10, myBezier"
+          "workspaces, 1, 10, myBezier"
+        ];
+      };
 
-    #####################
-    ### LOOK AND FEEL ###
-    #####################
+      input = {
+        kb_layout    = "fr";
+        follow_mouse = 1;
+        sensitivity  = 0;
+        touchpad = {
+          natural_scroll = true;
+        };
+      };
 
-    general {
-      gaps_in  = 3
-      gaps_out = 7
-      border_size = 2
-      col.active_border   = rgb(9a00d5)
-      col.inactive_border = rgb(11111b)
-    }
+      gesture = "3, horizontal, workspace";
 
-    decoration {
-      rounding       = 5
-      rounding_power = 2
+      bind = [
+        "$mainMod, A, exec, kitty"
+        "$mainMod, F, exec, firefox"
+        "$mainMod, S, exec, signal-desktop"
+        "$mainMod, T, exec, Telegram"
+        "$mainMod, L, exec, $ipc lockScreen lock"
+        "$mainMod, E, exec, $fileManager"
+        "$mainMod, Q, killactive"
+        "$mainMod, SPACE, exec, $ipc launcher toggle"
+        "$mainMod, P, exec, $ipc sessionMenu toggle"
+        "$mainMod, O, exec, $ipc controlCenter toggle"
+        "$mainMod, V, togglefloating,"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", xf86monbrightnessup,   exec, brightnessctl set 5%+"
+        ", xf86monbrightnessdown, exec, brightnessctl set 5%-"
+        ", print, exec, grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
+        "$mainMod, left,  movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up,    movefocus, u"
+        "$mainMod, down,  movefocus, d"
+        "$mainMod, ampersand,  workspace, 1"
+        "$mainMod, eacute,     workspace, 2"
+        "$mainMod, quotedbl,   workspace, 3"
+        "$mainMod, apostrophe, workspace, 4"
+        "$mainMod, parenleft,  workspace, 5"
+        "$mainMod, minus,      workspace, 6"
+        "$mainMod, egrave,     workspace, 7"
+        "$mainMod, underscore, workspace, 8"
+        "$mainMod, ccedilla,   workspace, 9"
+        "$mainMod SHIFT, ampersand,  movetoworkspace, 1"
+        "$mainMod SHIFT, eacute,     movetoworkspace, 2"
+        "$mainMod SHIFT, quotedbl,   movetoworkspace, 3"
+        "$mainMod SHIFT, apostrophe, movetoworkspace, 4"
+        "$mainMod SHIFT, parenleft,  movetoworkspace, 5"
+        "$mainMod SHIFT, minus,      movetoworkspace, 6"
+        "$mainMod SHIFT, egrave,     movetoworkspace, 7"
+        "$mainMod SHIFT, underscore, movetoworkspace, 8"
+        "$mainMod SHIFT, ccedilla,   movetoworkspace, 9"
+        "$mainMod SHIFT, right, resizeactive,  10 0"
+        "$mainMod SHIFT, left,  resizeactive, -10 0"
+        "$mainMod SHIFT, up,    resizeactive,  0 -10"
+        "$mainMod SHIFT, down,  resizeactive,  0  10"
+      ];
 
-      shadow {
-        enabled      = true
-        range        = 4
-        render_power = 3
-        color        = rgba(1a1a1aee)
+      binde = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
+
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+
+      bindd = [
+        "$mainMod SHIFT, left,  Move window left,  movewindow, l"
+        "$mainMod SHIFT, right, Move window right, movewindow, r"
+        "$mainMod SHIFT, up,    Move window up,    movewindow, u"
+        "$mainMod SHIFT, down,  Move window down,  movewindow, d"
+      ];
+    };
+
+    # layerrule et windowrule gardés en extraConfig car nouvelle syntaxe non supportée par HM
+    extraConfig = ''
+      layerrule {
+        name            = noctalia
+        match:namespace = noctalia-background-.*$
+        ignore_alpha    = 0.5
+        blur            = true
+        blur_popups     = true
       }
 
-      blur {
-        enabled  = true
-        size     = 3
-        passes   = 3
-        vibrancy = 0.1696
+      windowrule {
+        name  = suppress-maximize-events
+        match:class = .*
+        suppress_event = maximize
       }
-    }
 
-    animations {
-      enabled = yes
-      bezier  = myBezier, 0.16, 1, 0.3, 1
-
-      animation = windows,    1, 5,  myBezier
-      animation = windowsOut, 1, 5,  myBezier, popin 80%
-      animation = border,     1, 10, myBezier
-      animation = fade,       1, 10, myBezier
-      animation = workspaces, 1, 10, myBezier
-    }
-
-    layerrule {
-      name            = noctalia
-      match:namespace = noctalia-background-.*$
-      ignore_alpha    = 0.5
-      blur            = true
-      blur_popups     = true
-    }
-
-    #############
-    ### INPUT ###
-    #############
-
-    input {
-      kb_layout    = fr
-      follow_mouse = 1
-      sensitivity  = 0
-
-      touchpad {
-        natural_scroll = yes
+      windowrule {
+        name             = fix-xwayland-drags
+        match:class      = ^$
+        match:title      = ^$
+        match:xwayland   = true
+        match:float      = true
+        match:fullscreen = false
+        match:pin        = false
+        no_focus = true
       }
-    }
 
-    ################
-    ### GESTURES ###
-    ################
-
-    gesture = 3, horizontal, workspace
-
-    ###################
-    ### KEYBINDINGS ###
-    ###################
-
-    $mainMod = SUPER
-    $ipc  = noctalia-shell ipc call
-
-    bind  = $mainMod, A, exec, kitty
-    bind  = $mainMod, F, exec, firefox
-    bind  = $mainMod, S, exec, signal-desktop
-    bind  = $mainMod, T, exec, Telegram
-    bind  = $mainMod, L, exec, $ipc lockScreen lock
-    bind  = $mainMod, E, exec, $fileManager
-    bind  = $mainMod, Q, killactive
-    bind  = $mainMod, SPACE, exec, $ipc launcher toggle
-    bind  = $mainMod, P, exec, $ipc sessionMenu toggle
-    bind  = $mainMod, O, exec, $ipc controlCenter toggle
-    bind  = $mainMod, V, togglefloating,
-
-    bind  = , XF86AudioMute,        exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-    binde = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-    binde = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-
-    bind = , xf86monbrightnessup,   exec, brightnessctl set 5%+
-    bind = , xf86monbrightnessdown, exec, brightnessctl set 5%-
-    
-    bind = , print,     exec, grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
-    bind = $mainMod, S, exec, grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
-    
-    bind = $mainMod, left,  movefocus, l
-    bind = $mainMod, right, movefocus, r
-    bind = $mainMod, up,    movefocus, u
-    bind = $mainMod, down,  movefocus, d
-
-    bind = $mainMod, ampersand,  workspace, 1
-    bind = $mainMod, eacute,     workspace, 2
-    bind = $mainMod, quotedbl,   workspace, 3
-    bind = $mainMod, apostrophe, workspace, 4
-    bind = $mainMod, parenleft,  workspace, 5
-    bind = $mainMod, minus,      workspace, 6
-    bind = $mainMod, egrave,     workspace, 7
-    bind = $mainMod, underscore, workspace, 8
-    bind = $mainMod, ccedilla,   workspace, 9
-
-    bind = $mainMod SHIFT, ampersand,  movetoworkspace, 1
-    bind = $mainMod SHIFT, eacute,     movetoworkspace, 2
-    bind = $mainMod SHIFT, quotedbl,   movetoworkspace, 3
-    bind = $mainMod SHIFT, apostrophe, movetoworkspace, 4
-    bind = $mainMod SHIFT, parenleft,  movetoworkspace, 5
-    bind = $mainMod SHIFT, minus,      movetoworkspace, 6
-    bind = $mainMod SHIFT, egrave,     movetoworkspace, 7
-    bind = $mainMod SHIFT, underscore, movetoworkspace, 8
-    bind = $mainMod SHIFT, ccedilla,   movetoworkspace, 9
-
-    bindm = $mainMod, mouse:272, movewindow
-    bindm = $mainMod, mouse:273, resizewindow
-
-    bindd = $mainMod SHIFT, left,  Move window left,  movewindow, l
-    bindd = $mainMod SHIFT, right, Move window right, movewindow, r
-    bindd = $mainMod SHIFT, up,    Move window up,    movewindow, u
-    bindd = $mainMod SHIFT, down,  Move window down,  movewindow, d
-
-    bind = $mainMod SHIFT, right, resizeactive,  10 0
-    bind = $mainMod SHIFT, left,  resizeactive, -10 0
-    bind = $mainMod SHIFT, up,    resizeactive,  0 -10
-    bind = $mainMod SHIFT, down,  resizeactive,  0  10
-
-    ##############################
-    ### WINDOWS AND WORKSPACES ###
-    ##############################
-
-    windowrule {
-      name  = suppress-maximize-events
-      match:class = .*
-      suppress_event = maximize
-    }
-
-    windowrule {
-      name             = fix-xwayland-drags
-      match:class      = ^$
-      match:title      = ^$
-      match:xwayland   = true
-      match:float      = true
-      match:fullscreen = false
-      match:pin        = false
-      no_focus = true
-    }
-
-    windowrule {
-      name        = move-hyprland-run
-      match:class = hyprland-run
-      move  = 20 monitor_h-120
-      float = yes
-    }
-  '';
+      windowrule {
+        name        = move-hyprland-run
+        match:class = hyprland-run
+        move  = 20 monitor_h-120
+        float = yes
+      }
+    '';
+  };
 }
