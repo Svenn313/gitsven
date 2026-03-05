@@ -8,12 +8,15 @@
     services.displayManager.sddm = {
       enable         = true;
       wayland.enable = true;
+      theme          = "noctalia";
       settings.General.InputMethod = "";
-      theme = "noctalia";
+      extraPackages = [
+        pkgs.kdePackages.qt5compat
+        pkgs.kdePackages.qtdeclarative
+      ];
     };
 
     environment.systemPackages = [
-      pkgs.kdePackages.qt5compat
       (pkgs.stdenv.mkDerivation {
         name = "sddm-noctalia-theme";
         src = pkgs.fetchFromGitHub {
@@ -26,7 +29,7 @@
           mkdir -p $out/share/sddm/themes/noctalia
           cp -r . $out/share/sddm/themes/noctalia
           sed -i 's/import QtGraphicalEffects 1.12/import Qt5Compat.GraphicalEffects/' \
-          $out/share/sddm/themes/noctalia/Main.qml
+            $out/share/sddm/themes/noctalia/Main.qml
         '';
       })
     ];
