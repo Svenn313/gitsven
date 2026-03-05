@@ -20,4 +20,5 @@
       (pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; })
     ];
   };
+  environment.pathsToLink = [ "/share/sddm/themes" ];
 }
