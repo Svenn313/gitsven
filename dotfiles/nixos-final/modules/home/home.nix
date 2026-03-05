@@ -8,6 +8,7 @@
     ./nvim.nix
     ./devops.nix
     ./hyprland.nix
+    ./noctalia.nix
     inputs.noctalia.homeModules.default
   ];
 
@@ -29,12 +30,6 @@ services.gpg-agent.enable      = true;
 # =========================================
 
 # =========================================
-
-  programs.noctalia-shell = {
-    settings = {
-      location.name = "Paris, France";
-    };
-  };
 
   home.packages = with pkgs; [
     btop
@@ -60,7 +55,7 @@ services.gpg-agent.enable      = true;
     pinentry.package  = pkgs.pinentry-tty;
   };
 
-  programs.fzf = {
+ programs.fzf = {
     enableZshIntegration = true;
   };
 
