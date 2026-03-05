@@ -12,7 +12,7 @@
       settings.General.InputMethod = "";
       extraPackages = [
       pkgs.kdePackages.qtmultimedia
-      (pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; }
+      (pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; })
       ];
     };
 
@@ -26,4 +26,4 @@
       (pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; })
     ];
   };
-}
+
