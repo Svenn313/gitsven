@@ -13,6 +13,7 @@
 
   programs.noctalia-shell = {
     enable = true;
+    systemd.enable = true;
     settings = {
       location.name = "Paris, France";
     };

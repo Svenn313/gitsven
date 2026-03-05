@@ -12,7 +12,7 @@
     ### AUTOEXEC ###
     ################
 
-    exec-once = qs -c noctalia-shell
+    exec-once = noctalia-shell
     exec-once = blueman-applet
 
     ###################

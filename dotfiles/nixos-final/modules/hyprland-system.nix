@@ -1,3 +1,7 @@
+# System-level Hyprland configuration.
+# Only options that MUST be here: programs.hyprland, services.displayManager.sddm
+# User configuration (hyprland.conf, keybinds, etc.) is in modules/home/hyprland.nix
+
 { config, lib, pkgs, inputs, ... }:
 
 {

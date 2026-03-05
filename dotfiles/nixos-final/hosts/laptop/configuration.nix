@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
-    ../../modules/hyprland.nix
+    ../../modules/hyprland-system.nix
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/audio.nix
