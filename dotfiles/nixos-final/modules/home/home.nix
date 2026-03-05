@@ -11,9 +11,26 @@
     inputs.noctalia.homeModules.default
   ];
 
+
+# =========================================
+# MODULES TOGGLE — activer/désactiver ici
+# =========================================
+programs.kitty.enable          = true;
+programs.zsh.enable            = true;
+programs.zsh.oh-my-zsh.enable  = true;
+programs.git.enable            = true;
+programs.neovim.enable         = true;
+programs.gpg.enable            = true;
+programs.fzf.enable            = true;
+programs.noctalia-shell.enable = true;
+
+services.gpg-agent.enable      = true;
+
+# =========================================
+
+# =========================================
+
   programs.noctalia-shell = {
-    enable = true;
-    systemd.enable = true;
     settings = {
       location.name = "Paris, France";
     };
@@ -37,16 +54,13 @@
     protonmail-desktop
   ];
 
-  programs.gpg.enable = true;
   services.gpg-agent = {
-    enable            = true;
     enableSshSupport  = true;
     enableExtraSocket = true;
     pinentry.package  = pkgs.pinentry-tty;
   };
 
   programs.fzf = {
-    enable               = true;
     enableZshIntegration = true;
   };
 

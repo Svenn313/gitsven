@@ -2,7 +2,6 @@
 
 {
   programs.git = {
-    enable   = true;
     settings = {
       user.name         = "Svenn313";
       user.email        = "sven313@protonmail.com";

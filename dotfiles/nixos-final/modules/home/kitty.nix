@@ -2,7 +2,6 @@
 
 {
   programs.kitty = {
-    enable = true;
     extraConfig = ''
       font_family Fira Code Regular
       bold_font Fira Code Retina
