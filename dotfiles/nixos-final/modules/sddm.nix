@@ -18,7 +18,7 @@ let
       FormBackgroundColor = "#1e1e2e";
       BackgroundColor = "#cba6f7";
       DimBackgroundColor = "#000000";
-      DimBackground = "0.3";
+      DimBackground = "0.7";
       HeaderTextColor = "#cdd6f4";
       DateTextColor = "#cdd6f4";
       TimeTextColor = "#cba6f7";
