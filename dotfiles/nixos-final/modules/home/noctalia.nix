@@ -36,7 +36,7 @@
         directory = "/home/sven/Pictures/Wallpapers";
         automationEnabled = true;
         wallpaperChangeMode = "random";
-        randomIntervalSec = 300;
+        randomIntervalSec = 10;
         transitionDuration = 1500;
         fillMode = "crop";
       };

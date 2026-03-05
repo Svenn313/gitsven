@@ -10,6 +10,7 @@
       exec-once = [
         "noctalia-shell"
         "blueman-applet"
+        "sleep 3 && noctalia-shell ipc call wallpaper enableAutomation"
       ];
 
       "$terminal"    = "kitty";
@@ -19,6 +20,7 @@
       "$ipc"         = "noctalia-shell ipc call";
 
       env = [
+        "XCURSOR_THEME, Bibata-Modern-Classic"
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
       ];
