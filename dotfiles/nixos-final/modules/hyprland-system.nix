@@ -31,6 +31,7 @@
       python3
       kdePackages.dolphin
       grim
+      bibata-cursors
       ];
 
   };
