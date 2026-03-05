@@ -12,6 +12,7 @@
     ../../modules/networking.nix
     ../../modules/fonts.nix
     ../../modules/locale.nix
+    ../../modules/sddm.nix
   ];
 
   # =========================================
