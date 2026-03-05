@@ -38,7 +38,24 @@
       kdePackages.dolphin
       grim
     ];
+    
+    environment.systemPackages = [
+      (pkgs.stdenv.mkDerivation {
+        name = "sddm-noctalia-theme";
+        src = pkgs.fetchFromGitHub {
+          owner  = "mahaveergurjar";
+          repo   = "sddm";
+          rev    = "noctalia";
+          sha256 = pkgs.lib.fakeHash;
+        };
+        installPhase = ''
+          mkdir -p $out/share/sddm/themes/noctalia
+          cp -r . $out/share/sddm/themes/noctalia
+        '';
+      })
+    ];
 
+services.displayManager.sddm.theme = "noctalia";
     services.power-profiles-daemon.enable = true;
     services.upower.enable                = true;
   };
