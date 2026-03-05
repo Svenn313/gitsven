@@ -13,6 +13,7 @@
     };
 
     environment.systemPackages = [
+      pkgs.libsForQt5.qt5.qtgraphicaleffects
       (pkgs.stdenv.mkDerivation {
         name = "sddm-noctalia-theme";
         src = pkgs.fetchFromGitHub {
