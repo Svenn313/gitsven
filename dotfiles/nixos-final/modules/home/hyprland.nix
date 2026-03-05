@@ -105,7 +105,7 @@
     ###################
 
     $mainMod = SUPER
-    $ipc     = qs -c noctalia-shell ipc call
+    $ipc  = noctalia-shell ipc call
 
     bind  = $mainMod, A, exec, kitty
     bind  = $mainMod, F, exec, firefox
