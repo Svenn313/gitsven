@@ -10,7 +10,6 @@
       exec-once = [
         "noctalia-shell"
         "blueman-applet"
-        "sleep 3 && noctalia-shell ipc call wallpaper enableAutomation"
       ];
 
       "$terminal"    = "kitty";
