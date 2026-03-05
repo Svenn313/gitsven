@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -8,7 +8,15 @@
     ./nvim.nix
     ./devops.nix
     ./hyprland.nix
+    inputs.noctalia.homeModules.default
   ];
+
+  programs.noctalia-shell = {
+    enable = true;
+    settings = {
+      location.name = "Paris, France";
+    };
+  };
 
   home.packages = with pkgs; [
     btop

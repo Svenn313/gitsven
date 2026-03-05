@@ -1,4 +1,4 @@
-{ config, lib, pkgs, noctalia-shell, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   options.modules.hyprland.enable = lib.mkEnableOption "hyprland";
@@ -13,6 +13,12 @@
     services.displayManager.sddm = {
       enable         = true;
       wayland.enable = true;
+      settings.General.InputMethod = "";
+    };
+
+    services.xserver.xkb = {
+      layout  = "fr";
+      variant = "azerty";
     };
 
     xdg.portal = {
@@ -21,14 +27,15 @@
     };
 
     environment.systemPackages = with pkgs; [
-      noctalia-shell.packages.${pkgs.system}.default
       brightnessctl
       imagemagick
       ffmpeg
       python3
-      qt6.qtmultimedia
       kdePackages.dolphin
       grim
     ];
+
+    services.power-profiles-daemon.enable = true;
+    services.upower.enable                = true;
   };
 }

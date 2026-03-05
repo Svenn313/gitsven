@@ -18,7 +18,7 @@
   # MODULES TOGGLE — activer/désactiver ici
   # =========================================
   modules = {
-    nvidia.enable     = false; # désactivé en VM, activer sur vrai hardware
+    nvidia.enable     = true; # désactivé en VM, activer sur vrai hardware
     hyprland.enable   = true;
     docker.enable     = true;
     ssh.enable        = true;
@@ -70,5 +70,5 @@
 
   nixpkgs.config.allowUnfree = true;
   programs.zsh.enable        = true;
-  system.stateVersion        = "24.11";
+  system.stateVersion        = "25.11";
 }
