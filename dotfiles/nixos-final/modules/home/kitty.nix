@@ -2,86 +2,100 @@
 
 {
   programs.kitty = {
-    extraConfig = ''
-      font_family Fira Code Regular
-      bold_font Fira Code Retina
-      font_family MesloLGS NF Regular
-      bold_font MesloLGS NF Bold
-      italic_font MesloLGS NF Italic
-      bold_italic_font MesloLGS NF Bold Italic
-      font_features FiraCode-Regular +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31
-      font_features FiraCode-Retina +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31
-      font_size 15.0
+    font = {
+      name = "MesloLGS NF Regular";
+      size = 15.0;
+    };
 
-      shell_integration no-cursor
-      cursor_shape block
-      cursor_blink_interval 0
+    settings = {
+      bold_font        = "MesloLGS NF Bold";
+      italic_font      = "MesloLGS NF Italic";
+      bold_italic_font = "MesloLGS NF Bold Italic";
 
-      background_opacity 0.7
-      enable_background_blur yes
-      background_blur 1
-      dynamic_background_opacity yes
+      font_features = [
+        "FiraCode-Regular +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31"
+        "FiraCode-Retina +zero +ss01 +ss02 +ss03 +ss04 +ss05 +cv31"
+      ];
 
-      modify_font underline_position +3
-      modify_font underline_thickness 150%
+      # Cursor
+      shell_integration      = "no-cursor";
+      cursor_shape           = "block";
+      cursor_blink_interval  = 0;
 
-      tab_bar_edge bottom
-      tab_bar_margin_height 0.0 4.0
-      tab_bar_style slant
-      tab_bar_min_tabs 2
-      tab_title_template "{activity_symbol} {index} {tab.active_exe}"
-      map alt+1 goto_tab 1
-      map alt+2 goto_tab 2
-      map alt+3 goto_tab 3
-      map alt+4 goto_tab 4
-      map alt+5 goto_tab 5
+      # Background
+      background_opacity         = "0.7";
+      enable_background_blur     = "yes";
+      background_blur            = 1;
+      dynamic_background_opacity = "yes";
 
-      foreground              #CDD6F4
-      background              #11111B
-      selection_foreground    #11111B
-      selection_background    #F5E0DC
+      # Font tweaks
+      modify_font = [
+        "underline_position +3"
+        "underline_thickness 150%"
+      ];
 
-      cursor                  #F5E0DC
-      cursor_text_color       #11111B
+      # Tabs
+      tab_bar_edge          = "bottom";
+      tab_bar_margin_height = "0.0 4.0";
+      tab_bar_style         = "slant";
+      tab_bar_min_tabs      = 2;
+      tab_title_template    = "{activity_symbol} {index} {tab.active_exe}";
 
-      url_color               #F5E0DC
+      # Colors
+      foreground           = "#CDD6F4";
+      background           = "#11111B";
+      selection_foreground = "#11111B";
+      selection_background = "#F5E0DC";
 
-      active_border_color     #B4BEFE
-      inactive_border_color   #6C7086
-      bell_border_color       #F9E2AF
+      cursor           = "#F5E0DC";
+      cursor_text_color = "#11111B";
+      url_color        = "#F5E0DC";
 
-      wayland_titlebar_color system
-      macos_titlebar_color system
+      active_border_color   = "#B4BEFE";
+      inactive_border_color = "#6C7086";
+      bell_border_color     = "#F9E2AF";
 
-      active_tab_foreground   #CDD6F4
-      active_tab_background   #11111B
-      inactive_tab_foreground #6C7086
-      inactive_tab_background #09090e
-      tab_bar_background      #09090e
+      wayland_titlebar_color = "system";
+      macos_titlebar_color   = "system";
 
-      mark1_foreground #11111B
-      mark1_background #B4BEFE
-      mark2_foreground #11111B
-      mark2_background #CBA6F7
-      mark3_foreground #11111B
-      mark3_background #74C7EC
+      active_tab_foreground   = "#CDD6F4";
+      active_tab_background   = "#11111B";
+      inactive_tab_foreground = "#6C7086";
+      inactive_tab_background = "#09090e";
+      tab_bar_background      = "#09090e";
 
-      color0  #45475A
-      color8  #585B70
-      color1  #F38BA8
-      color9  #F38BA8
-      color2  #A6E3A1
-      color10 #A6E3A1
-      color3  #F9E2AF
-      color11 #F9E2AF
-      color4  #89B4FA
-      color12 #89B4FA
-      color5  #F5C2E7
-      color13 #F5C2E7
-      color6  #94E2D5
-      color14 #94E2D5
-      color7  #BAC2DE
-      color15 #A6ADC8
-    '';
+      mark1_foreground = "#11111B";
+      mark1_background = "#B4BEFE";
+      mark2_foreground = "#11111B";
+      mark2_background = "#CBA6F7";
+      mark3_foreground = "#11111B";
+      mark3_background = "#74C7EC";
+
+      # 16 colors
+      color0  = "#45475A";
+      color8  = "#585B70";
+      color1  = "#F38BA8";
+      color9  = "#F38BA8";
+      color2  = "#A6E3A1";
+      color10 = "#A6E3A1";
+      color3  = "#F9E2AF";
+      color11 = "#F9E2AF";
+      color4  = "#89B4FA";
+      color12 = "#89B4FA";
+      color5  = "#F5C2E7";
+      color13 = "#F5C2E7";
+      color6  = "#94E2D5";
+      color14 = "#94E2D5";
+      color7  = "#BAC2DE";
+      color15 = "#A6ADC8";
+    };
+
+    keybindings = {
+      "alt+1" = "goto_tab 1";
+      "alt+2" = "goto_tab 2";
+      "alt+3" = "goto_tab 3";
+      "alt+4" = "goto_tab 4";
+      "alt+5" = "goto_tab 5";
+    };
   };
 }
