@@ -19,7 +19,7 @@
           owner  = "mahaveergurjar";
           repo   = "sddm";
           rev    = "noctalia";
-          sha256 = pkgs.lib.fakeHash;
+          sha256 = "sha256-Qa2/b8P8Pk1qttMEdpKbExiljGmQEoCrm0tENmFaPak=";
         };
         installPhase = ''
           mkdir -p $out/share/sddm/themes/noctalia
