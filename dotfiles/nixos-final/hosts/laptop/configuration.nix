@@ -19,7 +19,7 @@
   # MODULES TOGGLE — activer/désactiver ici
   # =========================================
   modules = {
-    nvidia.enable     = true; # désactivé en VM, activer sur vrai hardware
+    nvidia.enable     = true;
     hyprland.enable   = true;
     docker.enable     = true;
     ssh.enable        = true;
@@ -28,6 +28,7 @@
     networking.enable = true;
     fonts.enable      = true;
     locale.enable     = true;
+    sddm.enable       = true;
   };
 
   # =========================================
