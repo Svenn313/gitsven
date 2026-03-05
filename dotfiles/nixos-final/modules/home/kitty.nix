@@ -23,12 +23,6 @@
       background_blur            = 1;
       dynamic_background_opacity = "yes";
 
-      # Font tweaks
-      modify_font = [
-        "underline_position +3"
-        "underline_thickness 150%"
-      ];
-
       # Tabs
       tab_bar_edge          = "bottom";
       tab_bar_margin_height = "0.0 4.0";
@@ -92,5 +86,10 @@
       "alt+4" = "goto_tab 4";
       "alt+5" = "goto_tab 5";
     };
+    
+    extraConfig = ''
+      modify_font underline_position +3
+      modify_font underline_thickness 150%
+    '';
   };
 }
