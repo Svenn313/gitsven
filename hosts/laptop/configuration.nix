@@ -1,5 +1,4 @@
 { config, pkgs, noctalia-shell, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -16,7 +15,7 @@
   ];
 
   # =========================================
-  # MODULES TOGGLE — activer/désactiver ici
+  # TOGGLES — enable/disable here
   # =========================================
   modules = {
     nvidia.enable     = true;
@@ -31,12 +30,14 @@
     sddm.enable       = true;
   };
 
+  programs.zsh.enable   = true;
+  services.fwupd.enable = true;
+
   # =========================================
-  # SYSTÈME
+  # BOOT
   # =========================================
   boot.loader.systemd-boot.enable      = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.kernelParams = [
     "acpi_rev_override=1"
     "pci=realloc"
@@ -44,14 +45,20 @@
     "pcie_aspm=off"
   ];
 
+  # =========================================
+  # NIX
+  # =========================================
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   nix.gc = {
     automatic = true;
     dates     = "weekly";
     options   = "--delete-older-than 7d";
   };
+  nixpkgs.config.allowUnfree = true;
 
+  # =========================================
+  # USER
+  # =========================================
   users.users.sven = {
     isNormalUser = true;
     description  = "Sven";
@@ -62,15 +69,20 @@
     ];
   };
 
+  # =========================================
+  # PACKAGES
+  # =========================================
   environment.systemPackages = with pkgs; [
     vim
     wget
     curl
     git
     wakeonlan
+    fwupd
   ];
 
-  nixpkgs.config.allowUnfree = true;
-  programs.zsh.enable        = true;
-  system.stateVersion        = "25.11";
+  # =========================================
+  # SYSTEM
+  # =========================================
+  system.stateVersion = "25.11";
 }
