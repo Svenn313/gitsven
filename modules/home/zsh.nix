@@ -56,7 +56,7 @@
         nix flake update /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos
       }
   
-      function gc() {
+      function nixgc() {
         echo "sudo nix-collect-garbage -d"
         sudo nix-collect-garbage -d
       }
