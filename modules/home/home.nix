@@ -60,8 +60,11 @@ wayland.windowManager.hyprland.enable = true;
     enableZshIntegration = true;
   };
 
-  home.username      = "sven";
-  home.homeDirectory = "/home/sven";
+  home = {
+    username = "sven";
+    homeDirectory = "/home/sven";
+    file."pictures/wallpapers".source = ./wallpapers;
+  };
 
   xdg.userDirs = {
   enable = true;
