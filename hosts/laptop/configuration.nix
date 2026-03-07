@@ -83,6 +83,8 @@
     wakeonlan
     fwupd
   ];
+  
+  services.gnome.gnome-keyring.enable = true; # Electron apps need a system keyring
 
   # =========================================
   # SYSTEM
