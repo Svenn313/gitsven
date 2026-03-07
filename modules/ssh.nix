@@ -33,7 +33,7 @@
         enable = true;
         port = 2222; # separate port to distinguish from the main SSH daemon
         authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJiwxiEmpPQsqwx8zvQXRxx0qpVyxdOcTQvIM+kz+/77" ];
-        hostKeys = [ "/etc/secrets/initrd/ssh_host_ed25519_key" ]; # dedicated host keys, distinct from the system ones
+        hostKeys = [ "/etc/secrets/initrd/dropbear_key" ]; # dedicated host keys, distinct from the system ones
       };
       # Automatically trigger the LUKS unlock prompt on SSH connection
       postCommands = ''
