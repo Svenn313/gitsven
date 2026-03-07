@@ -33,7 +33,7 @@
 
       wallpaper = {
         enabled = true;
-        directory = "/home/sven/Pictures/Wallpapers";
+        directory = "/home/sven/Pictures/wallpapers";
         automationEnabled = true;
         wallpaperChangeMode = "random";
         randomIntervalSec = 300;
