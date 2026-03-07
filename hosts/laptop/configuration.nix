@@ -38,6 +38,9 @@
   # =========================================
   boot.loader.systemd-boot.enable      = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.systemd.enable           = true;
+  security.tpm2.enable                 = true;
+  security.tpm2.pkcs11.enable          = true;
   boot.kernelParams = [
     "acpi_rev_override=1"
     "pci=realloc"
