@@ -9,6 +9,7 @@
     ./devops.nix
     ./hyprland.nix
     ./noctalia.nix
+    ./element.nix
     inputs.noctalia.homeModules.default
   ];
 

@@ -32,6 +32,8 @@
 
   programs.zsh.enable   = true;
   services.fwupd.enable = true;
+  services.gnome.gnome-keyring.enable = true; # Electron apps need a system keyring
+  security.pam.services.sddm.enableGnomeKeyring = true; 
 
   # =========================================
   # BOOT
@@ -85,9 +87,6 @@
     libsecret
   ];
   
-  services.gnome.gnome-keyring.enable = true; # Electron apps need a system keyring
-  security.pam.services.sddm.enableGnomeKeyring = true; 
-
   # =========================================
   # SYSTEM
   # =========================================
