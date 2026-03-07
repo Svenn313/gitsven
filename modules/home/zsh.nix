@@ -36,7 +36,7 @@
     ];
 
     shellAliases = {
-      cat = "bat";
+      cat = "bat -p";
     };
 
     initContent = ''
