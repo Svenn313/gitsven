@@ -37,6 +37,7 @@
 
     shellAliases = {
       cat = "bat -p";
+      clip = "base64 -w0 | xargs -I{} printf '\e]52;c;{}\a'";
     };
 
     initContent = ''
