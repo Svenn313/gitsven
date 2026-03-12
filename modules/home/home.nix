@@ -49,6 +49,7 @@ wayland.windowManager.hyprland.enable = true;
     protonvpn-gui
     proton-pass
     protonmail-desktop
+    teams-for-linux
   ];
 
   services.gpg-agent = {
