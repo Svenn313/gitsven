@@ -51,7 +51,7 @@
       vim.lsp.config('pyright', {})
       vim.lsp.config('bashls', {})
       vim.lsp.config('yamlls', {})
-      lm.lsp.enable({ 'nixd', 'lua_ls', 'pyright', 'bashls', 'yamlls' })
+      vim.lsp.enable({ 'nixd', 'lua_ls', 'pyright', 'bashls', 'yamlls' })
 
        '';
     extraPackages = with pkgs; [
