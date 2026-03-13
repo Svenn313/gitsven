@@ -11,6 +11,7 @@
       bold_font        = "MesloLGS NF Bold";
       italic_font      = "MesloLGS NF Italic";
       bold_italic_font = "MesloLGS NF Bold Italic";
+      clipboard_control = "write-clipboard write-primary read-clipboard-ask read-primary-ask";
 
      # Cursor
       shell_integration      = "no-cursor";
