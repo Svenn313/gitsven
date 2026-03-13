@@ -71,7 +71,6 @@
       nvim-web-devicons
       telescope-nvim
       plenary-nvim
-      nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
       markdown-preview-nvim
