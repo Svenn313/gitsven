@@ -3,7 +3,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-
     initLua = ''
       vim.o.clipboard = "unnamedplus"
       vim.g.clipboard = {
@@ -16,8 +15,7 @@
           ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
           ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
         },
-      } 
-
+      }
       vim.opt.expandtab   = true
       vim.opt.shiftwidth  = 2
       vim.opt.tabstop     = 2
@@ -46,31 +44,36 @@
 
       -- gitsigns
       require("gitsigns").setup()
+
+      -- LSP
+      local lspconfig = require("lspconfig")
+      lspconfig.nixd.setup({})
+      lspconfig.lua_ls.setup({})
+      lspconfig.pyright.setup({})
+      lspconfig.bashls.setup({})
+      lspconfig.yamlls.setup({})
     '';
-
+    extraPackages = with pkgs; [
+      # LSP servers
+      nixd
+      lua-language-server
+      pyright
+      bash-language-server
+      yaml-language-server
+      # telescope
+      fd
+      ripgrep
+    ];
     plugins = with pkgs.vimPlugins; [
-      # theme
       catppuccin-nvim
-
-      # file tree
       nvim-tree-lua
       nvim-web-devicons
-
-      # telescope
       telescope-nvim
       plenary-nvim
-
-      # LSP
       nvim-lspconfig
-
-      # completion
       nvim-cmp
       cmp-nvim-lsp
-
-      # markdown
       markdown-preview-nvim
-
-      # UI
       lualine-nvim
       gitsigns-nvim
     ];
