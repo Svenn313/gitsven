@@ -47,7 +47,8 @@
       zstyle ':omz:plugins:alias-finder' cheaper yes
 
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+      
+      DISABLE_AUTO_TITLE="true"
       export PATH="$HOME/.local/bin:$PATH"
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         
