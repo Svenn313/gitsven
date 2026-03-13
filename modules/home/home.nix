@@ -51,6 +51,7 @@ wayland.windowManager.hyprland.enable = true;
     protonmail-desktop
     teams-for-linux
     wl-clipboard
+    tmux
   ];
 
   services.gpg-agent = {

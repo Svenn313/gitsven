@@ -5,6 +5,7 @@
     defaultEditor = true;
 
     initLua = ''
+      vim.o.clipboard = "unnamedplus"
       vim.g.clipboard = {
         name = "OSC 52",
         copy = {
