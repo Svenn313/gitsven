@@ -50,6 +50,7 @@ wayland.windowManager.hyprland.enable = true;
     proton-pass
     protonmail-desktop
     teams-for-linux
+    wl-clipboard
   ];
 
   services.gpg-agent = {
