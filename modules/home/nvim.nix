@@ -52,7 +52,8 @@
       lspconfig.pyright.setup({})
       lspconfig.bashls.setup({})
       lspconfig.yamlls.setup({})
-    '';
+
+       '';
     extraPackages = with pkgs; [
       # LSP servers
       nixd
