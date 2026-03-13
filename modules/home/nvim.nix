@@ -46,13 +46,13 @@
       require("gitsigns").setup()
 
       -- LSP
-      local lspconfig = require("lspconfig")
       lspconfig.nixd.setup({})
       lspconfig.lua_ls.setup({})
       lspconfig.pyright.setup({})
       lspconfig.bashls.setup({})
       lspconfig.yamlls.setup({})
 
+      vim.lsp.enable({ 'nixd', 'lua_ls', 'pyright', 'bashls', 'yamlls' })
        '';
     extraPackages = with pkgs; [
       # LSP servers
