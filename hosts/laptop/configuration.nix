@@ -82,6 +82,7 @@
     wget
     curl
     git
+    gh
     wakeonlan
     fwupd
     libsecret
