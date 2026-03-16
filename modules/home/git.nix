@@ -12,6 +12,10 @@
       core.excludesfile = "~/.gitignore_global";
     };
   };
-  gitCredentialHelper.enable = true;
+  
+  programs.gh = {
+    gitCredentialHelper.enable = true;
+  };
+
 }
 
