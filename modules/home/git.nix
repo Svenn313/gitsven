@@ -12,4 +12,6 @@
       core.excludesfile = "~/.gitignore_global";
     };
   };
+  gitCredentialHelper.enable = true;
 }
+

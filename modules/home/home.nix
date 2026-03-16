@@ -25,6 +25,7 @@ programs.neovim.enable         = true;
 programs.gpg.enable            = true;
 programs.fzf.enable            = true;
 programs.noctalia-shell.enable = true;
+programs.gh.enable = true;
 
 services.gpg-agent.enable      = true;
 wayland.windowManager.hyprland.enable = true;
