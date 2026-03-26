@@ -75,7 +75,7 @@
       bind = [
         "$mainMod, A, exec, kitty"
         "$mainMod, F, exec, firefox"
-        "$mainMod, T, exec, Element"
+        "$mainMod, T, exec, element-desktop"
         "$mainMod, L, exec, $ipc lockScreen lock"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, Q, killactive"
