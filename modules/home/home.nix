@@ -53,7 +53,6 @@ wayland.windowManager.hyprland.enable = true;
     protonmail-desktop
     teams-for-linux
     wl-clipboard
-    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
   services.gpg-agent = {
