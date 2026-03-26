@@ -58,3 +58,6 @@
         "browser.ctrlTab.sortByRecentlyUsed"                = true;
         "browser.warnOnQuit"                                = true; 
       };
+    }; 
+  };
+}
