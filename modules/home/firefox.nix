@@ -33,7 +33,7 @@
         "browser.tabs.tabMinWidth"                          = 76;
         "browser.compactmode.show"                          = true;
         "browser.uidensity"                                 = 1;
-        "browser.theme.dark-toolbar-theme"                  = 1;
+        "ui.systemUsesDarkTheme"                            = 1;
 
         # --- Privacy ---
         "privacy.donottrackheader.enabled"                  = true;
