@@ -10,6 +10,7 @@
     ./hyprland.nix
     ./noctalia.nix
     ./element.nix
+    ./firefox.nix
     inputs.noctalia.homeModules.default
   ];
 
