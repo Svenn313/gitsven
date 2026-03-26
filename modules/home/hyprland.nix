@@ -75,8 +75,7 @@
       bind = [
         "$mainMod, A, exec, kitty"
         "$mainMod, F, exec, firefox"
-        "$mainMod, S, exec, signal-desktop"
-        "$mainMod, T, exec, Telegram"
+        "$mainMod, T, exec, Element"
         "$mainMod, L, exec, $ipc lockScreen lock"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, Q, killactive"
