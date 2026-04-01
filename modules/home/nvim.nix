@@ -76,6 +76,7 @@
       markdown-preview-nvim
       lualine-nvim
       gitsigns-nvim
+      indent-blankline-nvim
     ];
   };
 }

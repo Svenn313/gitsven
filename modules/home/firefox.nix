@@ -12,7 +12,14 @@
         ublock-origin
         proton-pass
         proton-vpn
-        7TV
+        (buildFirefoxXpiAddon {
+          pname = "7tv";
+          version = "3.1.16";
+          addonId = "{ad154789-4a30-4559-9ac8-2e0efb6c4b0f}";
+          url = "https://addons.mozilla.org/firefox/downloads/file/4672494/7tv_extension-3.1.16.xpi";
+          sha256 = "sha256-uNpeVBwDyYLcy8wKtcI5geW8w9Qu9JzDPr1VIlkE1G8=";
+          meta = {};
+        })
       ];
 
       # -------------------------------------------------------------------------
