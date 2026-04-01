@@ -42,6 +42,9 @@
       -- lualine
       require("lualine").setup()
 
+      -- indent-line
+      require("ibl").setup()
+
       -- gitsigns
       require("gitsigns").setup()
 
