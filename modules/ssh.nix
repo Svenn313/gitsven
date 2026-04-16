@@ -26,7 +26,7 @@
         HostName 192.168.1.178
         User root
         Port 2222
-        IdentityFile ${key}
+        IdentityFile ~/.ssh/svenKey
 
       Host ubuntu
         HostName 192.168.1.87
