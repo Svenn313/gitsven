@@ -6,33 +6,41 @@
 
     services.openssh = {
       enable = true;
-      ports  = [ 22923 ];
+      ports = [ 22923 ];
       settings = {
-        PasswordAuthentication       = false;
-        X11Forwarding                = false;
-        PermitRootLogin              = "no";
+        PasswordAuthentication = false;
+        X11Forwarding = false;
+        PermitRootLogin = "no";
         KbdInteractiveAuthentication = false;
       };
     };
 
-    environment.etc."ssh/ssh_config.d/hosts.conf".text = ''
-      Host arch nixos laptop
-        HostName 192.168.1.178
-        User sven
-        Port 22923
-        IdentityFile ~/.ssh/svenKey
+    programs.ssh = {
+      enable = true;
 
-      Host laptop-dropbear
-        HostName 192.168.1.178
-        User root
-        Port 2222
-        IdentityFile ~/.ssh/svenKey
+      matchBlocks = {
+        "arch" = {
+          host = "arch nixos laptop";
+          hostname = "192.168.1.178";
+          user = "sven";
+          port = 22923;
+          identityFile = "~/.ssh/svenKey";
+        };
 
-      Host ubuntu
-        HostName 192.168.1.87
-        User sven
-        Port 22923
-        IdentityFile ~/.ssh/svenKey
-    '';
+        "laptop-dropbear" = {
+          hostname = "192.168.1.178";
+          user = "root";
+          port = 2222;
+          identityFile = "~/.ssh/svenKey";
+        };
+
+        "ubuntu" = {
+          hostname = "192.168.1.87";
+          user = "sven";
+          port = 22923;
+          identityFile = "~/.ssh/svenKey";
+        };
+      };
+    };
   };
 }
