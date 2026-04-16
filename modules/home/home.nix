@@ -11,6 +11,7 @@
     ./noctalia.nix
     ./element.nix
     ./firefox.nix
+    ./sshConfig.nix
     inputs.noctalia.homeModules.default
   ];
 
