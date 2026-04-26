@@ -122,11 +122,5 @@
         "Print".action = spawn "sh" "-c" "grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
       };
     };
-    config = lib.mkAfter ''
-    window-rule {
-      match app-id=".*"
-      blur true
-      }
-    '';
   };
 }

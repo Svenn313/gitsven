@@ -7,6 +7,7 @@
       wayland.enable = true;
       theme          = "${pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; }}/share/sddm/themes/sddm-astronaut-theme";
       settings.General.InputMethod = "";
+      settings.General.DefaultSession = "niri";
       extraPackages = [ pkgs.kdePackages.qtmultimedia ];
     };
     services.xserver.xkb = {
