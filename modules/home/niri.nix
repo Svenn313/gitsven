@@ -125,7 +125,7 @@
     config = lib.mkAfter ''
     window-rule {
       match app-id=".*"
-      blur {}
+      blur true
       }
     '';
   };
