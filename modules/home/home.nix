@@ -19,17 +19,17 @@
 # =========================================
 # MODULES TOGGLE — activer/désactiver ici
 # =========================================
-programs.kitty.enable          = true;
-programs.zsh.enable            = true;
-programs.zsh.oh-my-zsh.enable  = true;
-programs.git.enable            = true;
-programs.neovim.enable         = true;
-programs.gpg.enable            = true;
-programs.fzf.enable            = true;
-programs.noctalia-shell.enable = true;
-programs.gh.enable = true;
+programs.kitty.enable           = true;
+programs.zsh.enable             = true;
+programs.zsh.oh-my-zsh.enable   = true;
+programs.git.enable             = true;
+programs.neovim.enable          = true;
+programs.gpg.enable             = true;
+programs.fzf.enable             = true;
+programs.noctalia-shell.enable  = true;
+programs.gh.enable              = true;
 
-services.gpg-agent.enable      = true;
+services.gpg-agent.enable       = true;
 wayland.windowManager.hyprland.enable = true;
 
 # =========================================
