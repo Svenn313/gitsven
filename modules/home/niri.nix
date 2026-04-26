@@ -51,15 +51,14 @@
       ];
 
       binds = with config.lib.niri.actions; {
-        # Apps
         "Mod+A".action        = spawn "kitty";
         "Mod+F".action        = spawn "firefox";
         "Mod+T".action        = spawn "element-desktop";
         "Mod+E".action        = spawn "dolphin";
-        "Mod+L".action        = spawn-sh "noctalia-shell ipc call lockScreen lock";
-        "Mod+Space".action    = spawn-sh "noctalia-shell ipc call launcher toggle";
-        "Mod+P".action        = spawn-sh "noctalia-shell ipc call sessionMenu toggle";
-        "Mod+O".action        = spawn-sh "noctalia-shell ipc call controlCenter toggle";
+        "Mod+L".action        = spawn "sh" "-c" "noctalia-shell ipc call lockScreen lock";
+        "Mod+Space".action    = spawn "sh" "-c" "noctalia-shell ipc call launcher toggle";
+        "Mod+P".action        = spawn "sh" "-c" "noctalia-shell ipc call sessionMenu toggle";
+        "Mod+O".action        = spawn "sh" "-c" "noctalia-shell ipc call controlCenter toggle";
 
         "Mod+Q".action        = close-window;
         "Mod+V".action        = toggle-window-floating;
@@ -99,13 +98,13 @@
         "Mod+Shift+underscore".action  = move-window-to-workspace 8;
         "Mod+Shift+ccedilla".action    = move-window-to-workspace 9;
 
-        "XF86AudioMute".action         = spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        "XF86AudioRaiseVolume".action  = spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-        "XF86AudioLowerVolume".action  = spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-        "XF86MonBrightnessUp".action   = spawn-sh "brightnessctl set 5%+";
-        "XF86MonBrightnessDown".action = spawn-sh "brightnessctl set 5%-";
+        "XF86AudioMute".action         = spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        "XF86AudioRaiseVolume".action  = spawn "sh" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+        "XF86AudioLowerVolume".action  = spawn "sh" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+        "XF86MonBrightnessUp".action   = spawn "sh" "-c" "brightnessctl set 5%+";
+        "XF86MonBrightnessDown".action = spawn "sh" "-c" "brightnessctl set 5%-";
 
-        "Print".action = spawn-sh "grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
+        "Print".action = spawn "sh" "-c" "grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
       };
 
       window-rules = [
