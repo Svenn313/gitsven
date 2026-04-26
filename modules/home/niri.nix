@@ -121,13 +121,6 @@
 
         "Print".action = spawn "sh" "-c" "grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
       };
-
-      window-rules = [
-        {
-          matches = [{ app-id = ".*"; }];
-          default-column-width.proportion = 0.5;
-        }
-      ];
     };
   };
 }
