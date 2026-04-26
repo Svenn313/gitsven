@@ -2,9 +2,10 @@
 {
   options.modules.niri.enable = lib.mkEnableOption "niri";
 
-  config = lib.mkIf config.modules.niri.enable {
-    imports = [ inputs.niri.nixosModules.niri ];
+  # imports doit être DEHORS du mkIf
+  imports = [ inputs.niri.nixosModules.niri ];
 
+  config = lib.mkIf config.modules.niri.enable {
     programs.niri.enable = true;
 
     xdg.portal = {
@@ -15,9 +16,9 @@
       ];
     };
 
-    security.polkit.enable            = true;
+    security.polkit.enable              = true;
     services.gnome.gnome-keyring.enable = true;
-    security.pam.services.swaylock    = {};
+    security.pam.services.swaylock      = {};
 
     environment.systemPackages = with pkgs; [
       brightnessctl
