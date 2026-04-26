@@ -14,7 +14,6 @@
     ./firefox.nix
     ./sshConfig.nix
     inputs.noctalia.homeModules.default
-    inputs.niri.homeModules.niri
     ];
 
 # =========================================
