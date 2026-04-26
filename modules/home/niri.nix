@@ -78,25 +78,25 @@
         "Mod+Ctrl+Up".action     = set-window-height "-10%";
         "Mod+Ctrl+Down".action   = set-window-height "+10%";
 
-        "Mod+ampersand".action   = focus-workspace 1;
-        "Mod+eacute".action      = focus-workspace 2;
-        "Mod+quotedbl".action    = focus-workspace 3;
-        "Mod+apostrophe".action  = focus-workspace 4;
-        "Mod+parenleft".action   = focus-workspace 5;
-        "Mod+minus".action       = focus-workspace 6;
-        "Mod+egrave".action      = focus-workspace 7;
-        "Mod+underscore".action  = focus-workspace 8;
-        "Mod+ccedilla".action    = focus-workspace 9;
+        "Mod+ampersand".action.focus-workspace  = [ 1 ];
+        "Mod+eacute".action.focus-workspace     = [ 2 ];
+        "Mod+quotedbl".action.focus-workspace   = [ 3 ];
+        "Mod+apostrophe".action.focus-workspace = [ 4 ];
+        "Mod+parenleft".action.focus-workspace  = [ 5 ];
+        "Mod+minus".action.focus-workspace      = [ 6 ];
+        "Mod+egrave".action.focus-workspace     = [ 7 ];
+        "Mod+underscore".action.focus-workspace = [ 8 ];
+        "Mod+ccedilla".action.focus-workspace   = [ 9 ];
 
-        "Mod+Shift+ampersand".action   = move-window-to-workspace 1;
-        "Mod+Shift+eacute".action      = move-window-to-workspace 2;
-        "Mod+Shift+quotedbl".action    = move-window-to-workspace 3;
-        "Mod+Shift+apostrophe".action  = move-window-to-workspace 4;
-        "Mod+Shift+parenleft".action   = move-window-to-workspace 5;
-        "Mod+Shift+minus".action       = move-window-to-workspace 6;
-        "Mod+Shift+egrave".action      = move-window-to-workspace 7;
-        "Mod+Shift+underscore".action  = move-window-to-workspace 8;
-        "Mod+Shift+ccedilla".action    = move-window-to-workspace 9;
+        "Mod+Shift+ampersand".action.move-window-to-workspace  = [ 1 ];
+        "Mod+Shift+eacute".action.move-window-to-workspace     = [ 2 ];
+        "Mod+Shift+quotedbl".action.move-window-to-workspace   = [ 3 ];
+        "Mod+Shift+apostrophe".action.move-window-to-workspace = [ 4 ];
+        "Mod+Shift+parenleft".action.move-window-to-workspace  = [ 5 ];
+        "Mod+Shift+minus".action.move-window-to-workspace      = [ 6 ];
+        "Mod+Shift+egrave".action.move-window-to-workspace     = [ 7 ];
+        "Mod+Shift+underscore".action.move-window-to-workspace = [ 8 ];
+        "Mod+Shift+ccedilla".action.move-window-to-workspace   = [ 9 ];
 
         "XF86AudioMute".action         = spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "XF86AudioRaiseVolume".action  = spawn "sh" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
