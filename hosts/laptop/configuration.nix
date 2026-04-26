@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
     ../../modules/hyprland-system.nix
+    ../../modules/niri-system.nix
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/audio.nix
@@ -20,6 +21,7 @@
   modules = {
     nvidia.enable     = true;
     hyprland.enable   = true;
+    niri.enable       = true;
     docker.enable     = true;
     ssh.enable        = true;
     audio.enable      = true;
