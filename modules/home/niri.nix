@@ -44,12 +44,12 @@
       ];
 
       animations = {
-        window-open.spring = {
+        window-open.kind.spring = {
           damping-ratio = 0.8;
           stiffness     = 400;
           epsilon       = 0.0001;
         };
-        workspace-switch.spring = {
+        workspace-switch.kind.spring = {
           damping-ratio = 0.8;
           stiffness     = 400;
           epsilon       = 0.0001;

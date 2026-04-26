@@ -49,7 +49,7 @@ wayland.windowManager.hyprland.enable = true;
     element-desktop
     signal-desktop
     discord
-    protonvpn-gui
+    proton-vpn
     proton-pass
     protonmail-desktop
     teams-for-linux
@@ -74,6 +74,7 @@ wayland.windowManager.hyprland.enable = true;
 
   xdg.userDirs = {
   enable = true;
+  setSessionVariables = false;
   createDirectories = true;
   desktop = "${config.home.homeDirectory}/desktop";
   documents = "${config.home.homeDirectory}/documents";
