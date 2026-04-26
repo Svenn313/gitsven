@@ -4,13 +4,13 @@
 
   imports = [ inputs.niri.nixosModules.niri ];
 
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   config = lib.mkIf config.modules.niri.enable {
-    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     programs.niri = {
       enable  = true;
       package = pkgs.niri-stable;
     };
-
     xdg.portal = {
       enable       = true;
       extraPortals = [
@@ -18,11 +18,9 @@
         pkgs.xdg-desktop-portal-gtk
       ];
     };
-
     security.polkit.enable              = true;
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.swaylock      = {};
-
     environment.systemPackages = with pkgs; [
       brightnessctl
       imagemagick
