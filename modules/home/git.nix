@@ -1,19 +1,14 @@
-{ pkgs, lib, config, ... }:
-{
-  programs.git = {
-    userName  = "Svenn313";
-    userEmail = "sven313@protonmail.com";
-    signing = {
-      key    = "1F1C6D535C4506DE";
-      signByDefault = true;
-      format = "openpgp";
+programs.git = {
+  settings = {
+    user = {
+      name       = "Svenn313";
+      email      = "sven313@protonmail.com";
+      signingkey = "1F1C6D535C4506DE";
     };
-    extraConfig = {
-      color.ui    = "auto";
-      pull.rebase = true;
-      core.excludesfile = "~/.gitignore_global";
-    };
+    commit.gpgsign = true;
+    signing.format = "openpgp";
+    color.ui       = "auto";
+    pull.rebase    = true;
+    core.excludesfile = "~/.gitignore_global";
   };
-
-  programs.gh.gitCredentialHelper.enable = true;
-}
+};
