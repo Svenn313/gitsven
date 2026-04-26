@@ -14,25 +14,25 @@
       xwayland.enable = true;
     };
 
-   services.xserver.xkb = {
+    services.xserver.xkb = {
       layout  = "fr";
       variant = "azerty";
     };
-
-    xdg.portal = {
-      enable       = true;
+    
+   xdg.portal = {
+      enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-    };
+      configPackages = [ pkgs.hyprland ];
+   };
 
-    environment.systemPackages = with pkgs; [
-      brightnessctl
-      imagemagick
-      ffmpeg
-      python3
-      kdePackages.dolphin
-      grim
-      bibata-cursors
-      ];
-
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    imagemagick
+    ffmpeg
+    python3
+    kdePackages.dolphin
+    grim
+    bibata-cursors
+  ];
   };
 }
