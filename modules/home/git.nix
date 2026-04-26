@@ -9,7 +9,6 @@
         signingkey = "1F1C6D535C4506DE";
       };
       commit.gpgsign = true;
-      signing.format = "openpgp";
       color.ui       = "auto";
       pull.rebase    = true;
       core.excludesfile = "~/.gitignore_global";
