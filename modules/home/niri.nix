@@ -62,6 +62,8 @@
 
         "Mod+Q".action        = close-window;
         "Mod+V".action        = toggle-window-floating;
+        "Mod+R".action        = switch-preset-column-width;
+        "Mod+M".action        = maximize-column;
 
         "Mod+Left".action     = focus-column-left;
         "Mod+Right".action    = focus-column-right;
