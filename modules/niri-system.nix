@@ -2,11 +2,14 @@
 {
   options.modules.niri.enable = lib.mkEnableOption "niri";
 
-  # imports doit être DEHORS du mkIf
   imports = [ inputs.niri.nixosModules.niri ];
 
   config = lib.mkIf config.modules.niri.enable {
-    programs.niri.enable = true;
+    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+    programs.niri = {
+      enable  = true;
+      package = pkgs.niri-stable;
+    };
 
     xdg.portal = {
       enable       = true;
