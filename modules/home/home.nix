@@ -14,9 +14,8 @@
     ./firefox.nix
     ./sshConfig.nix
     inputs.noctalia.homeModules.default
-    inputs.niri.homeModules.default
-  ];
-
+    inputs.niri.homeModules.niri
+    ];
 
 # =========================================
 # MODULES TOGGLE — activer/désactiver ici
