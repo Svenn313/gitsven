@@ -29,19 +29,18 @@
           color  = "#1a1a1aee";
         };
       };
-
       window-rules = [
       {
-        matches = [ { } ];
+        matches = [{ app-id = ".*"; }];
         geometry-corner-radius = {
-        top-left     = 5.0;
-        top-right    = 5.0;
-        bottom-left  = 5.0;
-        bottom-right = 5.0;
+          top-left     = 5.0;
+          top-right    = 5.0;
+          bottom-left  = 5.0;
+          bottom-right = 5.0;
         };
-      clip-to-geometry = true;
-      default-column-width.proportion = 0.5;
-      }
+        clip-to-geometry = true;
+        default-column-width.proportion = 0.5;
+        }
       ];
 
       animations = {
