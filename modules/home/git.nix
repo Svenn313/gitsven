@@ -2,7 +2,7 @@
 {
   programs.git = {
     settings = {
-      signing.format = "openpgp";
+      signing.format = "null";
       user = {
         name       = "Svenn313";
         email      = "sven313@protonmail.com";
