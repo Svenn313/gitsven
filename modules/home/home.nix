@@ -8,11 +8,13 @@
     ./nvim.nix
     ./devops.nix
     ./hyprland.nix
+    ./niri.nix
     ./noctalia.nix
     ./element.nix
     ./firefox.nix
     ./sshConfig.nix
     inputs.noctalia.homeModules.default
+    inputs.niri.homeModules.default
   ];
 
 
