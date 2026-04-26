@@ -1,8 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
   programs.niri = {
-    enable = true;
-
     settings = {
       input.keyboard.xkb.layout = "fr";
       input.keyboard.xkb.variant = "azerty";
