@@ -20,8 +20,8 @@
 
       # Background
       background_opacity         = "0.7";
-      enable_background_blur     = "yes";
-      background_blur            = 1;
+      #enable_background_blur     = "yes";
+      #background_blur            = 1;
       dynamic_background_opacity = "yes";
 
       # Tabs
