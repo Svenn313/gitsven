@@ -19,7 +19,7 @@
       cursor_blink_interval  = 0;
 
       # Background
-      background_opacity = "1.0";
+      background_opacity = "1";
 
       # Tabs
       tab_bar_edge          = "bottom";
