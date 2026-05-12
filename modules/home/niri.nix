@@ -29,6 +29,7 @@
           color  = "#1a1a1aee";
         };
       };
+
       window-rules = [
       {
         matches = [{ app-id = ".*"; }];
