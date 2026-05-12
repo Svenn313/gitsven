@@ -26,6 +26,10 @@
         port = 22923;
         identityFile = "~/.ssh/svenKey";
       };
+
     };
+
+    # Includes hosts with sensitive info (e.g. public IPs) kept out of version control
+    extraConfig = "Include ~/.ssh/config.local";
   };
 }
