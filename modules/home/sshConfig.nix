@@ -5,6 +5,8 @@
     enableDefaultConfig = false;
 
     matchBlocks = {
+      "*" = {};
+
       "arch" = {
         host = "arch nixos laptop";
         hostname = "192.168.1.178";
