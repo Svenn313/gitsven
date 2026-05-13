@@ -90,5 +90,13 @@ wayland.windowManager.hyprland.enable = true;
   videos = "${config.home.homeDirectory}/videos";
   };
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
   home.stateVersion  = "24.11";
 }
