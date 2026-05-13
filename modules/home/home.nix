@@ -98,5 +98,10 @@ wayland.windowManager.hyprland.enable = true;
     };
   };
 
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+  };
+
   home.stateVersion  = "24.11";
 }
