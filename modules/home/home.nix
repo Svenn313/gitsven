@@ -28,6 +28,8 @@ programs.gpg.enable             = true;
 programs.fzf.enable             = true;
 programs.noctalia-shell.enable  = true;
 programs.gh.enable              = true;
+programs.firefox.enable         = true;
+programs.ssh.enable             = true;
 
 services.gpg-agent.enable       = true;
 wayland.windowManager.hyprland.enable = true;
@@ -55,6 +57,7 @@ wayland.windowManager.hyprland.enable = true;
     teams-for-linux
     wl-clipboard
     claude-code
+    libreoffice
   ];
 
   services.gpg-agent = {
