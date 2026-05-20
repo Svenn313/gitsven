@@ -13,6 +13,7 @@
     ./element.nix
     ./firefox.nix
     ./sshConfig.nix
+    ./dolphin.nix
     inputs.noctalia.homeModules.default
     ];
 
@@ -100,8 +101,13 @@ wayland.windowManager.hyprland.enable = true;
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "qtct";
+    style = {
+      name = "Breeze";
+      package = pkgs.kdePackages.breeze;
+    };
   };
+
 
   home.stateVersion  = "24.11";
 }
