@@ -18,6 +18,12 @@
 
       layout = {
         gaps = 7;
+        focus-ring = {
+          enable = true;
+          width  = 1;
+          active.color   = "#c4a85e80";
+          inactive.color = "#00000000";
+        };
         border = {
           enable = true;
           width  = 2;
