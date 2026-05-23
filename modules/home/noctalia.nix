@@ -10,7 +10,7 @@
       };
 
       colorSchemes = {
-        predefinedScheme = "Catppuccin";
+        predefinedScheme = "Gruvbox";
         darkMode = true;
         useWallpaperColors = false;
       };
@@ -26,9 +26,37 @@
 
       bar = {
         position = "top";
-        density = "default";
-        floating = false;
-        backgroundOpacity = 0.93;
+        density = "comfortable";
+        floating = true;
+        backgroundOpacity = 0.85;
+        widgets = {
+          left = [
+            { id = "Launcher"; }
+            { id = "Clock"; }
+            { id = "SystemMonitor";
+              compactMode = false;
+              showCpuUsage = true;
+              showCpuTemp = false;
+              showMemoryUsage = true;
+              showMemoryAsPercent = true;
+              showNetworkStats = true;
+              showDiskUsage = true;
+              showDiskUsageAsPercent = true;
+            }
+            { id = "ActiveWindow"; }
+          ];
+          center = [
+            { id = "Workspace"; }
+          ];
+          right = [
+            { id = "Tray"; }
+            { id = "NotificationHistory"; }
+            { id = "Battery"; }
+            { id = "Volume"; }
+            { id = "Brightness"; }
+            { id = "ControlCenter"; }
+          ];
+        };
       };
 
       wallpaper = {
@@ -62,6 +90,25 @@
         lockTimeout = 660;
         suspendTimeout = 1800;
       };
+    };
+
+    colors = {
+      mSurface        = "#282828";
+      mSurfaceVariant = "#3c3836";
+      mPrimary        = "#E4C680";
+      mSecondary      = "#d79921";
+      mTertiary       = "#689d6a";
+      mError          = "#cc241d";
+      mHover          = "#fabd2f";
+      mOnPrimary      = "#1d2021";
+      mOnSecondary    = "#1d2021";
+      mOnTertiary     = "#1d2021";
+      mOnSurface      = "#ebdbb2";
+      mOnSurfaceVariant = "#bdae93";
+      mOnError        = "#1d2021";
+      mOnHover        = "#1d2021";
+      mOutline        = "#504945";
+      mShadow         = "#1d2021";
     };
   };
 }
