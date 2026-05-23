@@ -45,6 +45,7 @@
               showDiskUsage = true;
               showDiskUsageAsPercent = true;
             }
+            { id = "Battery"; displayMode = "icon-always"; }
             { id = "ActiveWindow"; }
           ];
           center = [
@@ -53,7 +54,6 @@
           right = [
             { id = "Tray"; }
             { id = "NotificationHistory"; }
-            { id = "Battery"; displayMode = "graphic"; }
             { id = "Volume"; }
             { id = "Brightness"; }
             { id = "ControlCenter"; }

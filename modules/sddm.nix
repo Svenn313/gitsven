@@ -25,6 +25,7 @@
           DropdownBackgroundColor          = "#282828";
           DropdownSelectedBackgroundColor  = "#E4C680";
           DropdownTextColor                = "#ebdbb2";
+          Background                        = "/etc/nixos/modules/home/wallpapers/wallhaven-2e2xyx.jpg";
           PlaceholderTextColor             = "#504945";
           UserIconColor                    = "#E4C680";
           PasswordIconColor                = "#E4C680";

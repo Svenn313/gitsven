@@ -61,6 +61,7 @@ wayland.windowManager.hyprland.enable = true;
     wl-clipboard
     claude-code
     libreoffice
+    fastfetch
   ];
 
   services.gpg-agent = {
