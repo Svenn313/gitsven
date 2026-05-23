@@ -15,6 +15,7 @@
     ./sshConfig.nix
     ./dolphin.nix
     ./ghostty.nix
+    ./fastfetch.nix
     inputs.noctalia.homeModules.default
     ];
 
@@ -61,7 +62,6 @@ wayland.windowManager.hyprland.enable = true;
     wl-clipboard
     claude-code
     libreoffice
-    fastfetch
   ];
 
   services.gpg-agent = {
