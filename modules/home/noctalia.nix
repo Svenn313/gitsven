@@ -29,6 +29,8 @@
         density = "comfortable";
         floating = true;
         backgroundOpacity = 0.85;
+        marginVertical = 6;
+        marginHorizontal = 8;
         widgets = {
           left = [
             { id = "Launcher"; }
@@ -51,7 +53,7 @@
           right = [
             { id = "Tray"; }
             { id = "NotificationHistory"; }
-            { id = "Battery"; }
+            { id = "Battery"; displayMode = "graphic"; }
             { id = "Volume"; }
             { id = "Brightness"; }
             { id = "ControlCenter"; }
@@ -96,10 +98,10 @@
       mSurface        = "#282828";
       mSurfaceVariant = "#3c3836";
       mPrimary        = "#E4C680";
-      mSecondary      = "#d79921";
-      mTertiary       = "#689d6a";
-      mError          = "#cc241d";
-      mHover          = "#fabd2f";
+      mSecondary      = "#a08840";
+      mTertiary       = "#5a7a5c";
+      mError          = "#8c4a4a";
+      mHover          = "#c4a85e";
       mOnPrimary      = "#1d2021";
       mOnSecondary    = "#1d2021";
       mOnTertiary     = "#1d2021";

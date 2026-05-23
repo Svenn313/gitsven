@@ -28,53 +28,53 @@
       tab_bar_min_tabs      = 2;
       tab_title_template    = "{activity_symbol} {index} {tab.active_exe}";
 
-      # Colors — Tokyo Night
-      foreground           = "#c0caf5";
-      background           = "#1a1b26";
-      selection_foreground = "#c0caf5";
-      selection_background = "#283457";
+      # Colors — Gruvbox
+      foreground           = "#ebdbb2";
+      background           = "#282828";
+      selection_foreground = "#ebdbb2";
+      selection_background = "#504945";
 
-      cursor            = "#c0caf5";
-      cursor_text_color = "#1a1b26";
-      url_color         = "#73daca";
+      cursor            = "#E4C680";
+      cursor_text_color = "#1d2021";
+      url_color         = "#83a598";
 
-      active_border_color   = "#7aa2f7";
-      inactive_border_color = "#3b4261";
-      bell_border_color     = "#ff9e64";
+      active_border_color   = "#E4C680";
+      inactive_border_color = "#504945";
+      bell_border_color     = "#a08840";
 
       wayland_titlebar_color = "system";
       macos_titlebar_color   = "system";
 
-      active_tab_foreground   = "#1a1b26";
-      active_tab_background   = "#7aa2f7";
-      inactive_tab_foreground = "#545c7e";
-      inactive_tab_background = "#16161e";
-      tab_bar_background      = "#101014";
+      active_tab_foreground   = "#1d2021";
+      active_tab_background   = "#E4C680";
+      inactive_tab_foreground = "#bdae93";
+      inactive_tab_background = "#3c3836";
+      tab_bar_background      = "#1d2021";
 
-      mark1_foreground = "#1a1b26";
-      mark1_background = "#7aa2f7";
-      mark2_foreground = "#1a1b26";
-      mark2_background = "#bb9af7";
-      mark3_foreground = "#1a1b26";
-      mark3_background = "#73daca";
+      mark1_foreground = "#1d2021";
+      mark1_background = "#E4C680";
+      mark2_foreground = "#1d2021";
+      mark2_background = "#a08840";
+      mark3_foreground = "#1d2021";
+      mark3_background = "#5a7a5c";
 
       # 16 colors
-      color0  = "#15161e";
-      color8  = "#414868";
-      color1  = "#f7768e";
-      color9  = "#f7768e";
-      color2  = "#9ece6a";
-      color10 = "#9ece6a";
-      color3  = "#e0af68";
-      color11 = "#e0af68";
-      color4  = "#7aa2f7";
-      color12 = "#7aa2f7";
-      color5  = "#bb9af7";
-      color13 = "#bb9af7";
-      color6  = "#7dcfff";
-      color14 = "#7dcfff";
-      color7  = "#a9b1d6";
-      color15 = "#c0caf5";
+      color0  = "#282828";
+      color8  = "#504945";
+      color1  = "#8c4a4a";
+      color9  = "#9d5c5c";
+      color2  = "#5a7a5c";
+      color10 = "#6b8f6b";
+      color3  = "#d4a96a";
+      color11 = "#E4C680";
+      color4  = "#458588";
+      color12 = "#83a598";
+      color5  = "#b16286";
+      color13 = "#d3869b";
+      color6  = "#8ec07c";
+      color14 = "#8ec07c";
+      color7  = "#bdae93";
+      color15 = "#ebdbb2";
     };
 
     keybindings = {
