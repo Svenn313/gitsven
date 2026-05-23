@@ -20,14 +20,14 @@
         gaps = 7;
         focus-ring = {
           enable = true;
-          width  = 1;
-          active.color   = "#c4a85e80";
+          width  = 2;
+          active.color   = "#fabd2f";
           inactive.color = "#00000000";
         };
         border = {
           enable = true;
           width  = 2;
-          active.color   = "#E4C680";
+          active.color   = "#00000000";
           inactive.color = "#11111b";
         };
         shadow = {
@@ -37,6 +37,14 @@
       };
 
       window-rules = [
+      {
+        matches = [{ app-id = "com.mitchellh.ghostty"; }];
+        opacity = 0.85;
+      }
+      {
+        matches = [{ app-id = "org.kde.dolphin"; }];
+        opacity = 0.90;
+      }
       {
         matches = [{ app-id = ".*"; }];
         geometry-corner-radius = {
@@ -71,7 +79,7 @@
       ];
 
       binds = with config.lib.niri.actions; {
-        "Mod+A".action        = spawn "kitty";
+        "Mod+A".action        = spawn "ghostty";
         "Mod+F".action        = spawn "firefox";
         "Mod+T".action        = spawn "element-desktop";
         "Mod+E".action        = spawn "dolphin";

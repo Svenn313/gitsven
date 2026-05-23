@@ -29,9 +29,9 @@
       tab_title_template    = "{activity_symbol} {index} {tab.active_exe}";
 
       # Colors — Gruvbox
-      foreground           = "#ebdbb2";
+      foreground           = "#f2f0ec";
       background           = "#282828";
-      selection_foreground = "#ebdbb2";
+      selection_foreground = "#f2f0ec";
       selection_background = "#504945";
 
       cursor            = "#E4C680";
@@ -73,8 +73,8 @@
       color13 = "#d3869b";
       color6  = "#8ec07c";
       color14 = "#8ec07c";
-      color7  = "#bdae93";
-      color15 = "#ebdbb2";
+      color7  = "#d4d0c8";
+      color15 = "#f2f0ec";
     };
 
     keybindings = {

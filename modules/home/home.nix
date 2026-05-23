@@ -103,7 +103,7 @@ wayland.windowManager.hyprland.enable = true;
 
   qt = {
     enable = true;
-    platformTheme.name = "qtct";
+    platformTheme.name = "kde";
     style = {
       name = "Breeze";
       package = pkgs.kdePackages.breeze;

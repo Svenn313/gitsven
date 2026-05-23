@@ -105,7 +105,7 @@
       mOnPrimary      = "#1d2021";
       mOnSecondary    = "#1d2021";
       mOnTertiary     = "#1d2021";
-      mOnSurface      = "#ebdbb2";
+      mOnSurface        = "#ebdbb2";
       mOnSurfaceVariant = "#bdae93";
       mOnError        = "#1d2021";
       mOnHover        = "#1d2021";

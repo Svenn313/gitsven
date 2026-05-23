@@ -3,11 +3,12 @@
 {
   programs.ghostty = {
     settings = {
+      window-decoration    = false;
       background           = "#282828";
-      foreground           = "#ebdbb2";
+      foreground           = "#f2f0ec";
       cursor-color         = "#E4C680";
       selection-background = "#504945";
-      selection-foreground = "#ebdbb2";
+      selection-foreground = "#f2f0ec";
 
       palette = [
         "0=#282828"
@@ -17,7 +18,7 @@
         "4=#458588"
         "5=#b16286"
         "6=#8ec07c"
-        "7=#bdae93"
+        "7=#d4d0c8"
         "8=#504945"
         "9=#9d5c5c"
         "10=#6b8f6b"
@@ -25,7 +26,7 @@
         "12=#83a598"
         "13=#d3869b"
         "14=#8ec07c"
-        "15=#ebdbb2"
+        "15=#f2f0ec"
       ];
     };
   };
