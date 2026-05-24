@@ -39,7 +39,7 @@
       window-rules = [
       {
         matches = [{ app-id = "com.mitchellh.ghostty"; }];
-        opacity = 0.85;
+        opacity = 0.93;
       }
       {
         matches = [{ app-id = "org.kde.dolphin"; }];
