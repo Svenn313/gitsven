@@ -39,11 +39,11 @@
       window-rules = [
       {
         matches = [{ app-id = "com.mitchellh.ghostty"; }];
-        opacity = 0.93;
+        opacity = 0.85;
       }
       {
         matches = [{ app-id = "org.kde.dolphin"; }];
-        opacity = 0.90;
+        opacity = 0.95;
       }
       {
         matches = [{ app-id = ".*"; }];
@@ -134,8 +134,34 @@
         "XF86MonBrightnessUp"   = { allow-when-locked = true; action = spawn "noctalia" "msg" "brightness-up"; };
         "XF86MonBrightnessDown" = { allow-when-locked = true; action = spawn "noctalia" "msg" "brightness-down"; };
 
-        "Print".action = spawn "sh" "-c" "grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
+        "Print".action = spawn "noctalia" "msg" "grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
       };
     };
   };
+
+  # niri-flake uses xdg.configFile.niri-config with source=<validated derivation>.
+  # Override source to append blur KDL that the module doesn't support natively.
+  xdg.configFile.niri-config.source = lib.mkForce (
+    pkgs.writeText "niri-config.kdl" (config.programs.niri.finalConfig + ''
+
+      window-rule {
+          background-effect {
+              blur true
+              xray false
+          }
+      }
+      blur {
+          passes 2
+          offset 3.0
+          noise 0.03
+          saturation 1.0
+      }
+      layer-rule {
+          match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel)$"
+          background-effect {
+              xray false
+          }
+      }
+    '')
+  );
 }
