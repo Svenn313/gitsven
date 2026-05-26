@@ -2,6 +2,7 @@
 
 {
   wayland.windowManager.hyprland = {
+    configType = "lua";
     settings = {
       monitor = ",preferred,auto,1";
 
