@@ -1,0 +1,121 @@
+[bar.main]
+background_opacity = 0.84999999999999998
+center = [ "workspaces", "active-window" ]
+density = "comfortable"
+end = [ "volume", "brightness", "tray", "notifications", "control-center" ]
+margin_h = 8
+margin_v = 6
+position = "top"
+shadow = false
+start = [ "launcher", "clock", "cpu", "ram", "sysmon", "network_tx", "network_rx", "battery" ]
+widget_spacing = 6
+
+[config]
+
+[dock]
+auto_hide = true
+enabled = true
+position = "bottom"
+
+[idle]
+behavior_order = [ "lock", "screen-off" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 660
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 600
+
+[notification]
+enable_daemon = true
+offset_x = 20
+offset_y = 8
+position = "top_right"
+
+[osd]
+position = "top_right"
+
+[shell]
+avatar_path = "/home/sven/.face"
+corner_radius_scale = 1
+settings_show_advanced = true
+telemetry_enabled = true
+
+    [shell.animation]
+    speed = 1.0
+
+    [shell.panel]
+    transparency_mode = "glass"
+
+[templates]
+
+[theme]
+builtin = "Gruvbox"
+mode = "dark"
+source = "builtin"
+
+[wallpaper]
+directory = "/home/sven/pictures/wallpapers"
+enabled = true
+fill_mode = "crop"
+transition_duration = 1500
+
+    [wallpaper.automation]
+    enabled = true
+    interval_minutes = 5
+    order = "random"
+
+    [wallpaper.default]
+    path = "/home/sven/pictures/wallpapers/peach_unicat.png"
+
+    [wallpaper.last]
+    path = "/home/sven/pictures/wallpapers/peach_unicat.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/sven/pictures/wallpapers/peach_unicat.png"
+
+[weather]
+address = "Paris, France"
+
+[widget.battery]
+display_mode = "icon-always"
+
+[widget.clock]
+capsule = true
+
+[widget.cpu]
+display = "text"
+
+[widget.launcher]
+capsule = true
+
+[widget.network_rx]
+display = "text"
+
+[widget.network_tx]
+display = "text"
+
+[widget.ram]
+display = "text"
+stat = "ram_pct"
+
+[widget.sysmon]
+show_cpu_temp = false
+show_cpu_usage = true
+show_disk_usage = false
+show_memory_as_percent = true
+show_memory_usage = true
+show_network_stats = true
+stat = "disk_pct"
+
+[widget.tray]
+drawer = true
+drawer_columns = 5
+
+[widget.workspaces]
+display = "id"
+hide_when_empty = true
