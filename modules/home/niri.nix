@@ -72,7 +72,7 @@
       };
 
       spawn-at-startup = [
-        { command = [ "noctalia-shell" ]; }
+        { command = [ "noctalia" ]; }
         { command = [ "blueman-applet" ]; }
         { command = [ "xwayland-satellite" ]; }
         { command = [ "swaybg" "-i" "/home/sven/pictures/wallpapers" ]; }
@@ -83,10 +83,10 @@
         "Mod+F".action        = spawn "firefox";
         "Mod+T".action        = spawn "element-desktop";
         "Mod+E".action        = spawn "dolphin";
-        "Mod+L".action        = spawn "sh" "-c" "noctalia-shell ipc call lockScreen lock";
-        "Mod+Space".action    = spawn "sh" "-c" "noctalia-shell ipc call launcher toggle";
-        "Mod+P".action        = spawn "sh" "-c" "noctalia-shell ipc call sessionMenu toggle";
-        "Mod+O".action        = spawn "sh" "-c" "noctalia-shell ipc call controlCenter toggle";
+        "Mod+L".action        = spawn "sh" "-c" "noctalia msg lockScreen lock";
+        "Mod+Space".action    = spawn "sh" "-c" "noctalia msg launcher toggle";
+        "Mod+P".action        = spawn "sh" "-c" "noctalia msg sessionMenu toggle";
+        "Mod+O".action        = spawn "sh" "-c" "noctalia msg controlCenter toggle";
 
         "Mod+Q".action        = close-window;
         "Mod+V".action        = toggle-window-floating;
