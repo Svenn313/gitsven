@@ -1,116 +1,72 @@
 { config, pkgs, inputs, ... }:
 
 {
-  programs.noctalia-shell = {
+  programs.noctalia = {
     settings = {
-      location = {
-        name = "Paris, France";
-        useFahrenheit = false;
-        use12hourFormat = false;
+      shell = {
+        corner_radius_scale = 1;
+        telemetry_enabled   = false;
+        avatar_path         = "/home/sven/.face";
+        animation.speed     = 1.0;
       };
 
-      colorSchemes = {
-        predefinedScheme = "Gruvbox";
-        darkMode = true;
-        useWallpaperColors = false;
-      };
-
-      general = {
-        avatarImage = "/home/sven/.face";
-        radiusRatio = 1;
-        animationSpeed = 1;
-        lockOnSuspend = true;
-        enableShadows = true;
-        telemetryEnabled = false;
-      };
-
-      bar = {
-        position = "top";
-        density = "comfortable";
-        floating = true;
-        backgroundOpacity = 0.85;
-        marginVertical = 6;
-        marginHorizontal = 8;
-        widgets = {
-          left = [
-            { id = "Launcher"; }
-            { id = "Clock"; }
-            { id = "SystemMonitor";
-              compactMode = false;
-              showCpuUsage = true;
-              showCpuTemp = false;
-              showMemoryUsage = true;
-              showMemoryAsPercent = true;
-              showNetworkStats = true;
-              showDiskUsage = true;
-              showDiskUsageAsPercent = true;
-            }
-            { id = "Battery"; displayMode = "icon-always"; }
-            { id = "ActiveWindow"; }
-          ];
-          center = [
-            { id = "Workspace"; }
-          ];
-          right = [
-            { id = "Tray"; }
-            { id = "NotificationHistory"; }
-            { id = "Volume"; }
-            { id = "Brightness"; }
-            { id = "ControlCenter"; }
-          ];
-        };
+      theme = {
+        mode    = "dark";
+        source  = "builtin";
+        builtin = "Gruvbox";
       };
 
       wallpaper = {
-        enabled = true;
-        directory = "/home/sven/pictures/wallpapers";
-        automationEnabled = true;
-        wallpaperChangeMode = "random";
-        randomIntervalSec = 300;
-        transitionDuration = 1500;
-        fillMode = "crop";
+        enabled             = true;
+        directory           = "/home/sven/pictures/wallpapers";
+        fill_mode           = "crop";
+        transition_duration = 1500;
+        automation = {
+          enabled          = true;
+          order            = "random";
+          interval_minutes = 5;
+        };
+      };
+
+      bar = {
+        main = {
+          position           = "top";
+          background_opacity = 0.85;
+          margin_h           = 8;
+          margin_v           = 6;
+          start              = [ "launcher" "clock" "system-monitor" "battery" "active-window" ];
+          center             = [ "workspaces" ];
+          end                = [ "tray" "notifications" "volume" "brightness" "control-center" ];
+        };
       };
 
       dock = {
-        enabled = true;
-        position = "bottom";
-        displayMode = "auto_hide";
-        size = 1;
+        enabled   = true;
+        position  = "bottom";
+        auto_hide = true;
       };
 
-      notifications = {
-        enabled = true;
-        location = "top_right";
-        lowUrgencyDuration = 3;
-        normalUrgencyDuration = 8;
-        criticalUrgencyDuration = 15;
+      notification = {
+        enable_daemon = true;
+        offset_x      = 20;
+        offset_y      = 8;
       };
 
       idle = {
-        enabled = true;
-        screenOffTimeout = 600;
-        lockTimeout = 660;
-        suspendTimeout = 1800;
+        behavior = {
+          lock = {
+            timeout = 660;
+            command = "noctalia:screen-lock";
+            enabled = true;
+          };
+          "screen-off" = {
+            timeout        = 600;
+            command        = "noctalia:dpms-off";
+            resume_command = "noctalia:dpms-on";
+            enabled        = true;
+          };
+        };
       };
-    };
-
-    colors = {
-      mSurface        = "#282828";
-      mSurfaceVariant = "#3c3836";
-      mPrimary        = "#E4C680";
-      mSecondary      = "#a08840";
-      mTertiary       = "#5a7a5c";
-      mError          = "#8c4a4a";
-      mHover          = "#c4a85e";
-      mOnPrimary      = "#1d2021";
-      mOnSecondary    = "#1d2021";
-      mOnTertiary     = "#1d2021";
-      mOnSurface        = "#ebdbb2";
-      mOnSurfaceVariant = "#bdae93";
-      mOnError        = "#1d2021";
-      mOnHover        = "#1d2021";
-      mOutline        = "#504945";
-      mShadow         = "#1d2021";
     };
   };
 }
