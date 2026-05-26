@@ -83,10 +83,10 @@
         "Mod+F".action        = spawn "firefox";
         "Mod+T".action        = spawn "element-desktop";
         "Mod+E".action        = spawn "dolphin";
-        "Mod+L".action        = spawn "sh" "-c" "noctalia msg lockScreen lock";
-        "Mod+Space".action    = spawn "sh" "-c" "noctalia msg launcher toggle";
-        "Mod+P".action        = spawn "sh" "-c" "noctalia msg sessionMenu toggle";
-        "Mod+O".action        = spawn "sh" "-c" "noctalia msg controlCenter toggle";
+        "Mod+L".action        = spawn "noctalia" "msg" "screen-lock";
+        "Mod+Space".action    = spawn "noctalia" "msg" "panel-toggle" "launcher";
+        "Mod+P".action        = spawn "noctalia" "msg" "panel-toggle" "session";
+        "Mod+O".action        = spawn "noctalia" "msg" "panel-toggle" "control-center";
 
         "Mod+Q".action        = close-window;
         "Mod+V".action        = toggle-window-floating;
@@ -128,11 +128,11 @@
         "Mod+Shift+underscore".action.move-window-to-workspace = [ 8 ];
         "Mod+Shift+ccedilla".action.move-window-to-workspace   = [ 9 ];
 
-        "XF86AudioMute".action         = spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        "XF86AudioRaiseVolume".action  = spawn "sh" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-        "XF86AudioLowerVolume".action  = spawn "sh" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-        "XF86MonBrightnessUp".action   = spawn "sh" "-c" "brightnessctl set 5%+";
-        "XF86MonBrightnessDown".action = spawn "sh" "-c" "brightnessctl set 5%-";
+        "XF86AudioMute"         = { allow-when-locked = true; action = spawn "noctalia" "msg" "volume-mute"; };
+        "XF86AudioRaiseVolume"  = { allow-when-locked = true; action = spawn "noctalia" "msg" "volume-up"; };
+        "XF86AudioLowerVolume"  = { allow-when-locked = true; action = spawn "noctalia" "msg" "volume-down"; };
+        "XF86MonBrightnessUp"   = { allow-when-locked = true; action = spawn "noctalia" "msg" "brightness-up"; };
+        "XF86MonBrightnessDown" = { allow-when-locked = true; action = spawn "noctalia" "msg" "brightness-down"; };
 
         "Print".action = spawn "sh" "-c" "grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
       };
