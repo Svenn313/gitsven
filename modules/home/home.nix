@@ -15,7 +15,6 @@
     ./sshConfig.nix
     ./dolphin.nix
     ./ghostty.nix
-    ./fastfetch.nix
     inputs.noctalia.homeModules.default
     ];
 
@@ -29,7 +28,7 @@ programs.git.enable             = true;
 programs.neovim.enable          = true;
 programs.gpg.enable             = true;
 programs.fzf.enable             = true;
-programs.noctalia-shell.enable  = true;
+programs.noctalia.enable        = true;
 programs.ghostty.enable         = true;
 programs.gh.enable              = true;
 programs.firefox.enable         = true;
