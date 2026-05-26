@@ -3,31 +3,29 @@
   programs.ssh = {
     enableDefaultConfig = false;
 
-    matchBlocks = {
+    settings = {
       "*" = {};
 
-      "arch" = {
-        host = "arch nixos laptop";
-        hostname = "192.168.1.178";
-        user = "sven";
-        port = 22923;
-        identityFile = "~/.ssh/svenKey";
+      "arch nixos laptop" = {
+        HostName = "192.168.1.178";
+        User = "sven";
+        Port = 22923;
+        IdentityFile = "~/.ssh/svenKey";
       };
 
       "laptop-dropbear" = {
-        hostname = "192.168.1.178";
-        user = "root";
-        port = 2222;
-        identityFile = "~/.ssh/svenKey";
+        HostName = "192.168.1.178";
+        User = "root";
+        Port = 2222;
+        IdentityFile = "~/.ssh/svenKey";
       };
 
       "ubuntu" = {
-        hostname = "192.168.1.87";
-        user = "sven";
-        port = 22923;
-        identityFile = "~/.ssh/svenKey";
+        HostName = "192.168.1.87";
+        User = "sven";
+        Port = 22923;
+        IdentityFile = "~/.ssh/svenKey";
       };
-
     };
 
     # Includes hosts with sensitive info (e.g. public IPs) kept out of version control
