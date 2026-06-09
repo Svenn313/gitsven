@@ -11,7 +11,14 @@
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
         proton-pass
-        proton-vpn
+        (buildFirefoxXpiAddon {
+          pname = "proton-vpn";
+          version = "3.0";
+          addonId = "{c228008e-9d02-4c6d-9b54-288507710fa1}";
+          url = "https://addons.mozilla.org/firefox/downloads/file/2844710/proton_vpn-3.0.xpi";
+          sha256 = "0dxfp30nnahc4j35p6fdv36bj85h4bdvh5gnxzs6kinryzqr45pb";
+          meta = {};
+        })
         (buildFirefoxXpiAddon {
           pname = "7tv";
           version = "3.1.16";
