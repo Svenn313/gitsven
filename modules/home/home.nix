@@ -34,7 +34,6 @@ programs.firefox.enable               = true;
 programs.ssh.enable                   = true;
 
 services.gpg-agent.enable             = true;
-wayland.windowManager.hyprland.enable = true;
 
 # =========================================
 
