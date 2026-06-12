@@ -7,7 +7,6 @@
     ./kitty.nix
     ./nvim.nix
     ./devops.nix
-    ./hyprland.nix
     ./niri.nix
     ./noctalia.nix
     ./element.nix
@@ -21,20 +20,20 @@
 # =========================================
 # MODULES TOGGLE — activer/désactiver ici
 # =========================================
-programs.kitty.enable           = true;
-programs.zsh.enable             = true;
-programs.zsh.oh-my-zsh.enable   = true;
-programs.git.enable             = true;
-programs.neovim.enable          = true;
-programs.gpg.enable             = true;
-programs.fzf.enable             = true;
-programs.noctalia.enable        = true;
-programs.ghostty.enable         = true;
-programs.gh.enable              = true;
-programs.firefox.enable         = true;
-programs.ssh.enable             = true;
+programs.kitty.enable                 = true;
+programs.zsh.enable                   = true;
+programs.zsh.oh-my-zsh.enable         = true;
+programs.git.enable                   = true;
+programs.neovim.enable                = true;
+programs.gpg.enable                   = true;
+programs.fzf.enable                   = true;
+programs.noctalia.enable              = true;
+programs.ghostty.enable               = true;
+programs.gh.enable                    = true;
+programs.firefox.enable               = true;
+programs.ssh.enable                   = true;
 
-services.gpg-agent.enable       = true;
+services.gpg-agent.enable             = true;
 wayland.windowManager.hyprland.enable = true;
 
 # =========================================

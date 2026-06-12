@@ -3,7 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
-    ../../modules/hyprland-system.nix
     ../../modules/niri-system.nix
     ../../modules/docker.nix
     ../../modules/ssh.nix
@@ -12,7 +11,6 @@
     ../../modules/networking.nix
     ../../modules/fonts.nix
     ../../modules/locale.nix
-    ../../modules/sddm.nix
   ];
 
   # =========================================
@@ -20,7 +18,6 @@
   # =========================================
   modules = {
     nvidia.enable     = true;
-    hyprland.enable   = true;
     niri.enable       = true;
     docker.enable     = true;
     ssh.enable        = true;
@@ -29,9 +26,9 @@
     networking.enable = true;
     fonts.enable      = true;
     locale.enable     = true;
-    sddm.enable       = true;
   };
-
+  
+  programs.noctalia-greeter.enable = true;
   programs.zsh.enable   = true;
   services.upower.enable = true;
   services.fwupd.enable = true;
