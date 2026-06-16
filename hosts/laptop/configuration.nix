@@ -51,6 +51,14 @@
   ];
 
   # =========================================
+  # ENVRIONMENT VARIABLES
+  # =========================================
+  environment.variables = {
+    XKB_DEFAULT_LAYOUT = "fr";
+    XKB_DEFAULT_VARIANT = "azerty";
+  };
+
+  # =========================================
   # NIX
   # =========================================
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
