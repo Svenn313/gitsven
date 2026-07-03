@@ -85,13 +85,13 @@
 # ==========================================
 # BESZEL
 # ==========================================
-services.beszel.agent = {
-  enable = true;
-  environment = {
-    PORT = "45876";
+  services.beszel.agent = {
+    enable = true;
+    environment = {
+      PORT = "45876";
+    };
+    environmentFile = "/etc/beszel/agent.env";
   };
-  environmentFile = "/etc/beszel/agent.env";
-};
 
   # =========================================
   # PACKAGES
