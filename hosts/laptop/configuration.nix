@@ -105,7 +105,6 @@
     wakeonlan
     fwupd
     libsecret
-    easyeffects
   ];
   
   # =========================================
