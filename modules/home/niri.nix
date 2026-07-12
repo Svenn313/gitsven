@@ -83,7 +83,7 @@
         "Mod+F".action        = spawn "firefox";
         "Mod+T".action        = spawn "element-desktop";
         "Mod+E".action        = spawn "dolphin";
-        "Mod+L".action        = spawn "noctalia" "msg" "screen-lock";
+        "Mod+L".action        = spawn "noctalia" "msg" "session" "lock";
         "Mod+Space".action    = spawn "noctalia" "msg" "panel-toggle" "launcher";
         "Mod+P".action        = spawn "noctalia" "msg" "panel-toggle" "session";
         "Mod+O".action        = spawn "noctalia" "msg" "panel-toggle" "control-center";
