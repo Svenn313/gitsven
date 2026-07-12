@@ -2,32 +2,34 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
-
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-
   fileSystems."/" =
-    { device = "/dev/mapper/luks-f4b509cd-1ef7-4370-9b90-bbfaa10b2fb5";
+    { device = "/dev/mapper/luks-aeb412ea-4f22-4c2d-9d53-ea35ac63f2bd";
       fsType = "ext4";
     };
-
-  boot.initrd.luks.devices."luks-f4b509cd-1ef7-4370-9b90-bbfaa10b2fb5".device = "/dev/disk/by-uuid/f4b509cd-1ef7-4370-9b90-bbfaa10b2fb5";
-
+  boot.initrd.luks.devices."luks-aeb412ea-4f22-4c2d-9d53-ea35ac63f2bd" = {
+    device = "/dev/disk/by-uuid/aeb412ea-4f22-4c2d-9d53-ea35ac63f2bd";
+    crypttabExtraOpts = [ "tpm2-device=auto" ];
+  };
+  boot.initrd.luks.devices."luks-af4b58cc-1808-4750-b9ca-0cdbfccd3271" = {
+    device = "/dev/disk/by-uuid/af4b58cc-1808-4750-b9ca-0cdbfccd3271";
+    crypttabExtraOpts = [ "tpm2-device=auto" ];
+  };
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/6920-C24F";
+    { device = "/dev/disk/by-uuid/4092-BF42";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-
-  swapDevices = [ ];
-
+  swapDevices =
+    [ { device = "/dev/mapper/luks-af4b58cc-1808-4750-b9ca-0cdbfccd3271"; }
+    ];
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
