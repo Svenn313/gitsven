@@ -8,13 +8,13 @@
     tflint
     terragrunt
 
-    # Container
+    # Container and Virtualization
     docker-compose
     kubectl
     kubectx
-    minikube
     k9s
     helm
+    virtualbox
 
     # Network
     inetutils

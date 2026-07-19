@@ -85,13 +85,19 @@
   # ==========================================
   # BESZEL
   # ==========================================
-    services.beszel.agent = {
-      enable = true;
-      environment = {
-        PORT = "45876";
-      };
-      environmentFile = "/etc/beszel/agent.env";
+  services.beszel.agent = {
+    enable = true;
+    environment = {
+      PORT = "45876";
     };
+    environmentFile = "/etc/beszel/agent.env";
+  };
+
+  # =========================================
+  # VIRTUALIZATION
+  # =========================================
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "sven" ];
 
   # =========================================
   # PACKAGES
