@@ -14,7 +14,6 @@
     kubectx
     k9s
     helm
-    virtualbox
 
     # Network
     inetutils

@@ -51,7 +51,14 @@
   ];
 
   # =========================================
-  # ENVRIONMENT VARIABLES
+  # SYSTEM BEHAVIOR
+  # =========================================
+  services.logind.settings.Login = {
+    IdleAction = "ignore";
+  };
+
+  # =========================================
+  # ENVIRONMENT VARIABLES
   # =========================================
   environment.variables = {
     XKB_DEFAULT_LAYOUT = "fr";
