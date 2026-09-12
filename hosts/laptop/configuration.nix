@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
     ../../modules/niri-system.nix
+    ../../modules/umbriel-system.nix
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/audio.nix
@@ -18,7 +19,7 @@
   # =========================================
   modules = {
     nvidia.enable     = true;
-    niri.enable       = true;
+    niri.enable       = false; #/!\
     docker.enable     = true;
     ssh.enable        = true;
     audio.enable      = true;
@@ -27,12 +28,13 @@
     fonts.enable      = true;
     locale.enable     = true;
   };
-  
-  programs.noctalia-greeter.enable = true;
-  programs.zsh.enable   = true;
-  services.upower.enable = true;
-  services.fwupd.enable = true;
-  services.gnome.gnome-keyring.enable = true; # Electron apps need a system keyring
+ 
+  programs.umbriel.enable                       = true;
+  programs.noctalia-greeter.enable              = true;
+  programs.zsh.enable                           = true;
+  services.upower.enable                        = true;
+  services.fwupd.enable                         = true;
+  services.gnome.gnome-keyring.enable           = true; # Electron apps need a system keyring
   security.pam.services.sddm.enableGnomeKeyring = true;
 
   # =========================================

@@ -8,6 +8,7 @@
     ./nvim.nix
     ./devops.nix
     ./niri.nix
+    ./umbriel.nix
     ./noctalia.nix
     ./element.nix
     ./firefox.nix
