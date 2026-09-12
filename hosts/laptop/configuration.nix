@@ -57,6 +57,8 @@
     IdleAction = "ignore";
   };
 
+  networking.firewall.allowedUDPPorts = [ 16261 16262 ];
+
   # =========================================
   # ENVIRONMENT VARIABLES
   # =========================================
