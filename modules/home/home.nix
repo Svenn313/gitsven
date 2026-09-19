@@ -28,11 +28,13 @@ programs.git.enable                   = true;
 programs.neovim.enable                = true;
 programs.gpg.enable                   = true;
 programs.fzf.enable                   = true;
+programs.zoxide.enable                = true;
 programs.noctalia.enable              = true;
 programs.ghostty.enable               = true;
 programs.gh.enable                    = true;
 programs.firefox.enable               = true;
 programs.ssh.enable                   = true;
+programs.umbriel.enable               = true;
 
 services.gpg-agent.enable             = true;
 
@@ -40,75 +42,82 @@ services.gpg-agent.enable             = true;
 
 # =========================================
 
-  home.packages = with pkgs; [
-    btop
-    tree
-    ripgrep
-    firefox
-    vlc
-    gcc
-    bat
-    networkmanagerapplet
-    telegram-desktop
-    element-desktop
-    signal-desktop
-    discord
-    proton-vpn
-    proton-pass
-    protonmail-desktop
-    teams-for-linux
-    wl-clipboard
-    claude-code
-    libreoffice
-  ];
+home.packages = with pkgs; [
+  btop
+  tree
+  ripgrep
+  firefox
+  vlc
+  gcc
+  bat
+  networkmanagerapplet
+  telegram-desktop
+  element-desktop
+  signal-desktop
+  discord
+  proton-vpn
+  proton-pass
+  protonmail-desktop
+  teams-for-linux
+  wl-clipboard
+  claude-code
+  libreoffice
+  zsh-powerlevel10k
+  eza
+];
 
-  services.gpg-agent = {
-    enableSshSupport  = true;
-    enableExtraSocket = true;
-    pinentry.package  = pkgs.pinentry-tty;
-  };
+services.gpg-agent = {
+enableSshSupport  = true;
+enableExtraSocket = true;
+pinentry.package  = pkgs.pinentry-tty;
+};
 
- programs.fzf = {
-    enableZshIntegration = true;
-  };
+programs.fzf = {
+enableZshIntegration = true;
+};
 
-  home = {
-    username = "sven";
-    homeDirectory = "/home/sven";
-    file."pictures/wallpapers".source = ./wallpapers;
-  };
+programs.zoxide = {
+enableZshIntegration = true;
+options = [ "--cmd cd" ];
+};
 
-  xdg.userDirs = {
-  enable = true;
-  setSessionVariables = false;
-  createDirectories = true;
-  desktop = "${config.home.homeDirectory}/desktop";
-  documents = "${config.home.homeDirectory}/documents";
-  download = "${config.home.homeDirectory}/downloads";
-  music = "${config.home.homeDirectory}/music";
-  pictures = "${config.home.homeDirectory}/pictures";
-  publicShare = "${config.home.homeDirectory}/public";
-  templates = "${config.home.homeDirectory}/templates";
-  videos = "${config.home.homeDirectory}/videos";
-  };
+home = {
+username = "sven";
+homeDirectory = "/home/sven";
+file."pictures/wallpapers".source = ./wallpapers;
+};
 
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-  };
+xdg.userDirs = {
+enable = true;
+setSessionVariables = false;
+createDirectories = true;
+desktop = "${config.home.homeDirectory}/desktop";
+documents = "${config.home.homeDirectory}/documents";
+download = "${config.home.homeDirectory}/downloads";
+music = "${config.home.homeDirectory}/music";
+pictures = "${config.home.homeDirectory}/pictures";
+publicShare = "${config.home.homeDirectory}/public";
+templates = "${config.home.homeDirectory}/templates";
+videos = "${config.home.homeDirectory}/videos";
+};
 
-  qt = {
-    enable = true;
-    platformTheme.name = "kde";
-    style = {
-      name = "Breeze";
-      package = pkgs.kdePackages.breeze;
-    };
-  };
+gtk = {
+enable = true;
+iconTheme = {
+  name = "Papirus-Dark";
+  package = pkgs.papirus-icon-theme;
+};
+};
+
+qt = {
+enable = true;
+platformTheme.name = "kde";
+style = {
+  name = "Breeze";
+  package = pkgs.kdePackages.breeze;
+};
+};
 
 
-  home.stateVersion  = "24.11";
+home.stateVersion  = "24.11";
 }
