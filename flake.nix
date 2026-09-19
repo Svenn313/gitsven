@@ -31,7 +31,7 @@
     };
     umbriel = {
       url = "git+https://github.com/noctalia-dev/umbriel";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 

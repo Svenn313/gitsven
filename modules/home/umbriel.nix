@@ -122,5 +122,5 @@
 
       "Print" = "spawn:grim ~/pictures/$(date +%Y-%m-%d_%H-%M-%S).png";
     };
-  };
+  }; 
 }
