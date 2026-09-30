@@ -27,7 +27,7 @@
 
     layout = {
       gap = 7;
-      scrolling.default_width_fraction = 0.5;
+      scrolling.default_extent_fraction = 0.5;
     };
 
     appearance = {
@@ -89,10 +89,10 @@
       "Mod+Shift+Up"    = "window-move-up";
       "Mod+Shift+Down"  = "window-move-down";
 
-      "Mod+Ctrl+Left"  = "window-modify-primary-width:-0.1";
-      "Mod+Ctrl+Right" = "window-modify-primary-width:0.1";
-      "Mod+Ctrl+Up"    = "window-modify-secondary-height:-0.1";
-      "Mod+Ctrl+Down"  = "window-modify-secondary-height:0.1";
+      "Mod+Ctrl+Left"  = "window-modify-primary-extent:-0.1";
+      "Mod+Ctrl+Right" = "window-modify-primary-extent:0.1";
+      "Mod+Ctrl+Up"    = "window-modify-secondary-extent:-0.1";
+      "Mod+Ctrl+Down"  = "window-modify-secondary-extent:0.1";
 
       "Mod+ampersand"  = "workspace-switch:1";
       "Mod+eacute"     = "workspace-switch:2";
