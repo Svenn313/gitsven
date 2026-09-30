@@ -76,7 +76,7 @@
 
       "Mod+Q" = "window-close";
       "Mod+V" = "window-toggle-floating";
-      "Mod+R" = "window-cycle-width";
+      "Mod+R" = "window-cycle-primary-extent";
       "Mod+M" = "window-toggle-maximize";
 
       "Mod+Left"  = "window-focus-left";
@@ -89,10 +89,10 @@
       "Mod+Shift+Up"    = "window-move-up";
       "Mod+Shift+Down"  = "window-move-down";
 
-      "Mod+Ctrl+Left"  = "window-modify-width:-0.1";
-      "Mod+Ctrl+Right" = "window-modify-width:0.1";
-      "Mod+Ctrl+Up"    = "window-modify-height:-0.1";
-      "Mod+Ctrl+Down"  = "window-modify-height:0.1";
+      "Mod+Ctrl+Left"  = "window-modify-primary-width:-0.1";
+      "Mod+Ctrl+Right" = "window-modify-primary-width:0.1";
+      "Mod+Ctrl+Up"    = "window-modify-secondary-height:-0.1";
+      "Mod+Ctrl+Down"  = "window-modify-secondary-height:0.1";
 
       "Mod+ampersand"  = "workspace-switch:1";
       "Mod+eacute"     = "workspace-switch:2";
