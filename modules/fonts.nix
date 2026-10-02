@@ -9,6 +9,8 @@
       nerd-fonts.jetbrains-mono
       noto-fonts-color-emoji
       nerd-fonts.meslo-lg
+      corefonts
+      liberation_ttf
     ];
   };
 }
