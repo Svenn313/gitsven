@@ -44,7 +44,7 @@
   # BOOT
   # =========================================
   boot.loader.systemd-boot.enable      = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.canTouchEfiVariables = false; # Avoid rebuild to fail because of an EFI bug
   boot.initrd.systemd.enable           = true;
   security.tpm2.enable                 = true;
   security.tpm2.pkcs11.enable          = true;
