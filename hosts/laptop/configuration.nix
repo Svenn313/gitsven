@@ -12,6 +12,7 @@
     ../../modules/networking.nix
     ../../modules/fonts.nix
     ../../modules/locale.nix
+    ../../modules/noctalia-greeter.nix
   ];
 
   # =========================================
@@ -32,7 +33,7 @@
   programs.umbriel.enable                           = true;
   programs.zsh.enable                               = true;
   
-  services.displayManagernoctalia-greeter.enable    = true;
+  services.displayManager.noctalia-greeter.enable   = true;
   services.upower.enable                            = true;
   services.fwupd.enable                             = true;
   services.gnome.gnome-keyring.enable               = true; # Electron apps need a system keyring
