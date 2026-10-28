@@ -117,5 +117,5 @@ drawer = true
 drawer_columns = 5
 
 [widget.workspaces]
-display = "id"
+label_source = "id"
 hide_when_empty = true
