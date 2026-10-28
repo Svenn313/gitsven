@@ -25,6 +25,10 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri= {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +45,8 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/laptop/configuration.nix
+
+        inputs.nixos-hardware.nixosModules.dell-xps-15-9510
 
         inputs.noctalia-greeter.nixosModules.default
         

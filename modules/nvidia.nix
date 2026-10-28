@@ -1,12 +1,15 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
   options.modules.nvidia.enable = lib.mkEnableOption "nvidia";
+
+  imports = [
+    inputs.nixos-hardware.nixosModules.dell-xps-15-9510-nvidia
+  ];
+
   config = lib.mkIf config.modules.nvidia.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware.graphics = {
-      enable      = true;
-      enable32Bit = true;
       extraPackages = with pkgs; [
         nvidia-vaapi-driver
       ];
@@ -20,10 +23,9 @@
       nvidiaSettings              = true;
       package                     = config.boot.kernelPackages.nvidiaPackages.stable;
       prime = {
-        sync.enable = true;
-        intelBusId  = "PCI:0:2:0";
-        nvidiaBusId = "PCI:1:0:0";
-      };
+        sync.enable    = true;
+        offload.enable = false;       
+        };
     };
 
     environment.sessionVariables = {
